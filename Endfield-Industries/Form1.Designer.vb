@@ -22,16 +22,28 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        TextBox1 = New TextBox()
         SuspendLayout()
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(315, 159)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(100, 23)
+        TextBox1.TabIndex = 0
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(TextBox1)
         Name = "Form1"
         Text = "Login-Form"
         ResumeLayout(False)
+        PerformLayout()
     End Sub
+
+    Friend WithEvents TextBox1 As TextBox
 
 End Class
