@@ -67,14 +67,14 @@ Partial Class Detail_Pabrik
         ' 
         txtKodeAlat.Location = New Point(171, 31)
         txtKodeAlat.Name = "txtKodeAlat"
-        txtKodeAlat.Size = New Size(100, 23)
+        txtKodeAlat.Size = New Size(121, 23)
         txtKodeAlat.TabIndex = 2
         ' 
         ' txtNamaAlat
         ' 
         txtNamaAlat.Location = New Point(171, 73)
         txtNamaAlat.Name = "txtNamaAlat"
-        txtNamaAlat.Size = New Size(100, 23)
+        txtNamaAlat.Size = New Size(121, 23)
         txtNamaAlat.TabIndex = 3
         ' 
         ' txtDeskAlat
