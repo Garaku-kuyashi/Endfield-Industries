@@ -42,6 +42,11 @@ Partial Class Detail_Pabrik
         txtSearchAlat = New TextBox()
         btnFormKategori = New Button()
         errorDetail = New ErrorProvider(components)
+        Button1 = New Button()
+        txtKodeKategoriDetail = New TextBox()
+        Label5 = New Label()
+        Label6 = New Label()
+        cbKategoriDetail = New ComboBox()
         CType(dgvAlat, ComponentModel.ISupportInitialize).BeginInit()
         CType(pcDetail, ComponentModel.ISupportInitialize).BeginInit()
         CType(errorDetail, ComponentModel.ISupportInitialize).BeginInit()
@@ -65,14 +70,14 @@ Partial Class Detail_Pabrik
         ' 
         ' txtKodeAlat
         ' 
-        txtKodeAlat.Location = New Point(171, 31)
+        txtKodeAlat.Location = New Point(165, 110)
         txtKodeAlat.Name = "txtKodeAlat"
         txtKodeAlat.Size = New Size(100, 23)
         txtKodeAlat.TabIndex = 2
         ' 
         ' txtNamaAlat
         ' 
-        txtNamaAlat.Location = New Point(171, 73)
+        txtNamaAlat.Location = New Point(165, 152)
         txtNamaAlat.Name = "txtNamaAlat"
         txtNamaAlat.Size = New Size(100, 23)
         txtNamaAlat.TabIndex = 3
@@ -88,7 +93,7 @@ Partial Class Detail_Pabrik
         ' cbWilayah
         ' 
         cbWilayah.FormattingEnabled = True
-        cbWilayah.Location = New Point(171, 113)
+        cbWilayah.Location = New Point(165, 192)
         cbWilayah.Name = "cbWilayah"
         cbWilayah.Size = New Size(121, 23)
         cbWilayah.TabIndex = 5
@@ -150,7 +155,7 @@ Partial Class Detail_Pabrik
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(305, 39)
+        Label1.Location = New Point(299, 118)
         Label1.Name = "Label1"
         Label1.Size = New Size(58, 15)
         Label1.TabIndex = 12
@@ -159,7 +164,7 @@ Partial Class Detail_Pabrik
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(305, 73)
+        Label2.Location = New Point(299, 152)
         Label2.Name = "Label2"
         Label2.Size = New Size(63, 15)
         Label2.TabIndex = 13
@@ -177,7 +182,7 @@ Partial Class Detail_Pabrik
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(314, 116)
+        Label4.Location = New Point(308, 195)
         Label4.Name = "Label4"
         Label4.Size = New Size(105, 15)
         Label4.TabIndex = 15
@@ -204,11 +209,58 @@ Partial Class Detail_Pabrik
         ' 
         errorDetail.ContainerControl = Me
         ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(34, 183)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(75, 23)
+        Button1.TabIndex = 18
+        Button1.Text = "Input Foto"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' txtKodeKategoriDetail
+        ' 
+        txtKodeKategoriDetail.Location = New Point(165, 12)
+        txtKodeKategoriDetail.Name = "txtKodeKategoriDetail"
+        txtKodeKategoriDetail.Size = New Size(100, 23)
+        txtKodeKategoriDetail.TabIndex = 19
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(290, 17)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(81, 15)
+        Label5.TabIndex = 21
+        Label5.Text = "Kode Kategori"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(300, 53)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(79, 15)
+        Label6.TabIndex = 22
+        Label6.Text = "Jenis Kategori"
+        ' 
+        ' cbKategoriDetail
+        ' 
+        cbKategoriDetail.FormattingEnabled = True
+        cbKategoriDetail.Location = New Point(162, 53)
+        cbKategoriDetail.Name = "cbKategoriDetail"
+        cbKategoriDetail.Size = New Size(121, 23)
+        cbKategoriDetail.TabIndex = 23
+        ' 
         ' Detail_Pabrik
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 494)
+        Controls.Add(cbKategoriDetail)
+        Controls.Add(Label6)
+        Controls.Add(Label5)
+        Controls.Add(txtKodeKategoriDetail)
+        Controls.Add(Button1)
         Controls.Add(btnFormKategori)
         Controls.Add(txtSearchAlat)
         Controls.Add(Label4)
@@ -255,4 +307,9 @@ Partial Class Detail_Pabrik
     Friend WithEvents txtSearchAlat As TextBox
     Friend WithEvents btnFormKategori As Button
     Friend WithEvents errorDetail As ErrorProvider
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtKodeKategoriDetail As TextBox
+    Friend WithEvents cbKategoriDetail As ComboBox
 End Class
