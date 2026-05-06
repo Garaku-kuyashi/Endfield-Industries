@@ -42,6 +42,7 @@ Partial Class Detail_Pabrik
         txtSearchAlat = New TextBox()
         btnFormKategori = New Button()
         errorDetail = New ErrorProvider(components)
+        Button1 = New Button()
         CType(dgvAlat, ComponentModel.ISupportInitialize).BeginInit()
         CType(pcDetail, ComponentModel.ISupportInitialize).BeginInit()
         CType(errorDetail, ComponentModel.ISupportInitialize).BeginInit()
@@ -204,11 +205,21 @@ Partial Class Detail_Pabrik
         ' 
         errorDetail.ContainerControl = Me
         ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(34, 183)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(75, 23)
+        Button1.TabIndex = 18
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
+        ' 
         ' Detail_Pabrik
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 494)
+        Controls.Add(Button1)
         Controls.Add(btnFormKategori)
         Controls.Add(txtSearchAlat)
         Controls.Add(Label4)
@@ -255,4 +266,5 @@ Partial Class Detail_Pabrik
     Friend WithEvents txtSearchAlat As TextBox
     Friend WithEvents btnFormKategori As Button
     Friend WithEvents errorDetail As ErrorProvider
+    Friend WithEvents Button1 As Button
 End Class
