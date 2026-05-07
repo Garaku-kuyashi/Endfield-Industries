@@ -41,15 +41,15 @@ Partial Class Kategori
         ' 
         ' txtKodeKategori
         ' 
-        txtKodeKategori.Location = New Point(234, 133)
+        txtKodeKategori.Location = New Point(234, 113)
         txtKodeKategori.Name = "txtKodeKategori"
-        txtKodeKategori.Size = New Size(100, 23)
+        txtKodeKategori.Size = New Size(121, 23)
         txtKodeKategori.TabIndex = 0
         ' 
         ' cbKategori
         ' 
         cbKategori.FormattingEnabled = True
-        cbKategori.Location = New Point(234, 186)
+        cbKategori.Location = New Point(234, 168)
         cbKategori.Name = "cbKategori"
         cbKategori.Size = New Size(121, 23)
         cbKategori.TabIndex = 1
