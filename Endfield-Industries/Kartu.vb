@@ -55,4 +55,8 @@ Public Class Kartu
 
         e.HasMorePages = False
     End Sub
+
+    Private Sub Kartu_Load(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

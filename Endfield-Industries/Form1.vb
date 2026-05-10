@@ -36,4 +36,8 @@
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
         If e.KeyCode = Keys.Enter Then btnLogin.PerformClick()
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
