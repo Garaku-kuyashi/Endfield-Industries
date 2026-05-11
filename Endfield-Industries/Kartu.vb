@@ -11,7 +11,7 @@ Public Class Kartu
         txtKartuKodeAlat.Text = kodeAlat
         txtKartuNamaAlat.Text = namaAlat
         txtKartuWilayah.Text = wilayah
-        TextBox6.Text = deskripsi
+        txtKartuDesk.Text = deskripsi ' Disesuaikan dengan nama kontrol instruksi
 
         If foto IsNot Nothing Then
             pcKartu.Image = foto
@@ -33,30 +33,27 @@ Public Class Kartu
     Public Sub CetakKartu()
         Using pd As New PrintDialog()
             pd.Document = printDoc
-            If pd.ShowDialog() = DialogResult.OK Then
-                printDoc.Print()
-            End If
+            If pd.ShowDialog() = DialogResult.OK Then printDoc.Print()
         End Using
     End Sub
 
     Private Sub PrintDoc_PrintPage(sender As Object, e As PrintPageEventArgs)
         Dim y As Integer = 50
-        Dim font As New Font("Consolas", 11)
+        Using font As New Font("Consolas", 11)
+            If imgToPrint IsNot Nothing Then
+                e.Graphics.DrawImage(imgToPrint, 50, 50, 120, 120)
+                y = 190
+            End If
 
-        If imgToPrint IsNot Nothing Then
-            e.Graphics.DrawImage(imgToPrint, 50, 50, 120, 120)
-            y = 190
-        End If
-
-        For Each line In linesToPrint
-            e.Graphics.DrawString(line, font, Brushes.Black, 200, y)
-            y += 22
-        Next
-
+            For Each line In linesToPrint
+                e.Graphics.DrawString(line, font, Brushes.Black, 200, y)
+                y += 22
+            Next
+        End Using
         e.HasMorePages = False
     End Sub
 
-    Private Sub Kartu_Load(sender As Object, e As EventArgs)
-
+    Private Sub btnCetakKartu_Click(sender As Object, e As EventArgs)
+        CetakKartu() ' Panggil metode cetak jika ada tombol cetak di form ini
     End Sub
 End Class

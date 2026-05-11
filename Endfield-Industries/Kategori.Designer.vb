@@ -41,77 +41,69 @@ Partial Class Kategori
         ' 
         ' txtKodeKategori
         ' 
-        txtKodeKategori.Location = New Point(334, 188)
-        txtKodeKategori.Margin = New Padding(4, 5, 4, 5)
+        txtKodeKategori.Location = New Point(234, 113)
         txtKodeKategori.Name = "txtKodeKategori"
-        txtKodeKategori.Size = New Size(171, 31)
+        txtKodeKategori.Size = New Size(121, 23)
         txtKodeKategori.TabIndex = 0
         ' 
         ' cbKategori
         ' 
         cbKategori.FormattingEnabled = True
-        cbKategori.Location = New Point(334, 280)
-        cbKategori.Margin = New Padding(4, 5, 4, 5)
+        cbKategori.Location = New Point(234, 168)
         cbKategori.Name = "cbKategori"
-        cbKategori.Size = New Size(171, 33)
+        cbKategori.Size = New Size(121, 23)
         cbKategori.TabIndex = 1
         ' 
         ' dgvKategori
         ' 
         dgvKategori.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvKategori.Location = New Point(60, 533)
-        dgvKategori.Margin = New Padding(4, 5, 4, 5)
+        dgvKategori.Location = New Point(42, 320)
         dgvKategori.Name = "dgvKategori"
         dgvKategori.RowHeadersWidth = 62
-        dgvKategori.Size = New Size(753, 250)
+        dgvKategori.Size = New Size(527, 150)
         dgvKategori.TabIndex = 2
         ' 
         ' btnSimpanKategori
         ' 
-        btnSimpanKategori.Location = New Point(60, 398)
-        btnSimpanKategori.Margin = New Padding(4, 5, 4, 5)
+        btnSimpanKategori.Location = New Point(42, 239)
         btnSimpanKategori.Name = "btnSimpanKategori"
-        btnSimpanKategori.Size = New Size(107, 38)
+        btnSimpanKategori.Size = New Size(75, 23)
         btnSimpanKategori.TabIndex = 3
         btnSimpanKategori.Text = "Simpan"
         btnSimpanKategori.UseVisualStyleBackColor = True
         ' 
         ' btnUbahKategori
         ' 
-        btnUbahKategori.Location = New Point(226, 398)
-        btnUbahKategori.Margin = New Padding(4, 5, 4, 5)
+        btnUbahKategori.Location = New Point(158, 239)
         btnUbahKategori.Name = "btnUbahKategori"
-        btnUbahKategori.Size = New Size(107, 38)
+        btnUbahKategori.Size = New Size(75, 23)
         btnUbahKategori.TabIndex = 4
         btnUbahKategori.Text = "Ubah"
         btnUbahKategori.UseVisualStyleBackColor = True
         ' 
         ' btnHapusKategori
         ' 
-        btnHapusKategori.Location = New Point(400, 398)
-        btnHapusKategori.Margin = New Padding(4, 5, 4, 5)
+        btnHapusKategori.Location = New Point(280, 239)
         btnHapusKategori.Name = "btnHapusKategori"
-        btnHapusKategori.Size = New Size(107, 38)
+        btnHapusKategori.Size = New Size(75, 23)
         btnHapusKategori.TabIndex = 5
         btnHapusKategori.Text = "Hapus"
         btnHapusKategori.UseVisualStyleBackColor = True
         ' 
         ' btnBatalKategori
         ' 
-        btnBatalKategori.Location = New Point(556, 398)
-        btnBatalKategori.Margin = New Padding(4, 5, 4, 5)
+        btnBatalKategori.Location = New Point(389, 239)
         btnBatalKategori.Name = "btnBatalKategori"
-        btnBatalKategori.Size = New Size(107, 38)
+        btnBatalKategori.Size = New Size(75, 23)
         btnBatalKategori.TabIndex = 6
         btnBatalKategori.Text = "Batal"
         btnBatalKategori.UseVisualStyleBackColor = True
         ' 
         ' btnFormDetail
         ' 
-        btnFormDetail.Location = New Point(706, 398)
-        btnFormDetail.Margin = New Padding(4, 5, 4, 5)
+        btnFormDetail.Location = New Point(494, 239)
         btnFormDetail.Name = "btnFormDetail"
-        btnFormDetail.Size = New Size(130, 38)
+        btnFormDetail.Size = New Size(91, 23)
         btnFormDetail.TabIndex = 7
         btnFormDetail.Text = "Form-Detail"
         btnFormDetail.UseVisualStyleBackColor = True
@@ -119,29 +111,26 @@ Partial Class Kategori
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(161, 188)
-        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Location = New Point(113, 113)
         Label1.Name = "Label1"
-        Label1.Size = New Size(124, 25)
+        Label1.Size = New Size(81, 15)
         Label1.TabIndex = 8
         Label1.Text = "Kode Kategori"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(161, 280)
-        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Location = New Point(113, 168)
         Label2.Name = "Label2"
-        Label2.Size = New Size(78, 25)
+        Label2.Size = New Size(51, 15)
         Label2.TabIndex = 9
         Label2.Text = "Kategori"
         ' 
         ' txtCariKategori
         ' 
-        txtCariKategori.Location = New Point(60, 485)
-        txtCariKategori.Margin = New Padding(4, 5, 4, 5)
+        txtCariKategori.Location = New Point(42, 291)
         txtCariKategori.Name = "txtCariKategori"
-        txtCariKategori.Size = New Size(751, 31)
+        txtCariKategori.Size = New Size(527, 23)
         txtCariKategori.TabIndex = 10
         txtCariKategori.Text = "Search......"
         ' 
@@ -151,9 +140,9 @@ Partial Class Kategori
         ' 
         ' Kategori
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1143, 803)
+        ClientSize = New Size(800, 482)
         Controls.Add(txtCariKategori)
         Controls.Add(Label2)
         Controls.Add(Label1)
@@ -165,7 +154,6 @@ Partial Class Kategori
         Controls.Add(dgvKategori)
         Controls.Add(cbKategori)
         Controls.Add(txtKodeKategori)
-        Margin = New Padding(4, 5, 4, 5)
         Name = "Kategori"
         Text = "Kategori"
         CType(dgvKategori, ComponentModel.ISupportInitialize).EndInit()
