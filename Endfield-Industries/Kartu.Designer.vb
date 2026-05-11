@@ -35,6 +35,8 @@ Partial Class Kartu
         txtKartuNamaAlat = New TextBox()
         txtKartuWilayah = New TextBox()
         TextBox6 = New TextBox()
+        Label7 = New Label()
+        txtKartuDesk = New TextBox()
         CType(pcKartu, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -142,11 +144,29 @@ Partial Class Kartu
         TextBox6.Size = New Size(100, 23)
         TextBox6.TabIndex = 12
         ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(139, 236)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(54, 15)
+        Label7.TabIndex = 13
+        Label7.Text = "Deskripsi"
+        ' 
+        ' txtKartuDesk
+        ' 
+        txtKartuDesk.Location = New Point(270, 236)
+        txtKartuDesk.Name = "txtKartuDesk"
+        txtKartuDesk.Size = New Size(100, 23)
+        txtKartuDesk.TabIndex = 14
+        ' 
         ' Kartu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(798, 455)
+        Controls.Add(txtKartuDesk)
+        Controls.Add(Label7)
         Controls.Add(TextBox6)
         Controls.Add(txtKartuWilayah)
         Controls.Add(txtKartuNamaAlat)
@@ -180,4 +200,6 @@ Partial Class Kartu
     Friend WithEvents txtKartuNamaAlat As TextBox
     Friend WithEvents txtKartuWilayah As TextBox
     Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtKartuDesk As TextBox
 End Class
