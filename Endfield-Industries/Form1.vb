@@ -5,11 +5,11 @@
         txtUsername.Focus()
     End Sub
 
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim username = txtUsername.Text.Trim()
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs)
+        Dim username = txtUsername.Text.Trim
         Dim password = txtPassword.Text
 
-        If ValidationModule.IsEmpty(username) OrElse ValidationModule.IsEmpty(password) Then
+        If IsEmpty(username) OrElse IsEmpty(password) Then
             MessageBox.Show("Username dan Password wajib diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
@@ -17,13 +17,13 @@
         ' Hardcoded login sesuai instruksi
         If username = "admin" AndAlso password = "12345" Then
             MessageBox.Show("Login Berhasil!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Dim frmKategori As New Kategori()
-            frmKategori.Show()
-            Me.Hide()
+            Dim frmKategori As New Kategori
+            frmKategori.Show
+            Hide()
         Else
             MessageBox.Show("Username atau Password salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            txtPassword.Clear()
-            txtUsername.Focus()
+            txtPassword.Clear
+            txtUsername.Focus
         End If
     End Sub
 
@@ -33,7 +33,7 @@
         End If
     End Sub
 
-    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
-        If e.KeyCode = Keys.Enter Then btnLogin.PerformClick()
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs)
+        If e.KeyCode = Keys.Enter Then btnLogin.PerformClick
     End Sub
 End Class
