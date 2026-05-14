@@ -22,128 +22,93 @@ Partial Class Home
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        MenuStrip1 = New MenuStrip()
-        HomeToolStripMenuItem = New ToolStripMenuItem()
-        ManajemenToolStripMenuItem = New ToolStripMenuItem()
-        KembaliToolStripMenuItem = New ToolStripMenuItem()
-        CetakLaporanToolStripMenuItem = New ToolStripMenuItem()
-        KembaliToolStripMenuItem1 = New ToolStripMenuItem()
-        KeluarToolStripMenuItem = New ToolStripMenuItem()
-        FlowLayoutPanel1 = New FlowLayoutPanel()
-        Panel1 = New Panel()
-        Panel2 = New Panel()
-        Panel3 = New Panel()
-        MenuStrip1.SuspendLayout()
-        FlowLayoutPanel1.SuspendLayout()
+        msNavigation = New MenuStrip()
+        menuHome = New ToolStripMenuItem()
+        menuManajemen = New ToolStripMenuItem()
+        menuCetakKartu = New ToolStripMenuItem()
+        menuCetakLaporan = New ToolStripMenuItem()
+        menuKembali = New ToolStripMenuItem()
+        menuKeluar = New ToolStripMenuItem()
+        pnlMainContent = New Panel()
+        msNavigation.SuspendLayout()
         SuspendLayout()
         ' 
-        ' MenuStrip1
+        ' msNavigation
         ' 
-        MenuStrip1.BackColor = SystemColors.ActiveCaption
-        MenuStrip1.Dock = DockStyle.Left
-        MenuStrip1.Items.AddRange(New ToolStripItem() {HomeToolStripMenuItem, ManajemenToolStripMenuItem, KembaliToolStripMenuItem, CetakLaporanToolStripMenuItem, KembaliToolStripMenuItem1, KeluarToolStripMenuItem})
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(101, 586)
-        MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"
+        msNavigation.BackColor = SystemColors.ActiveCaption
+        msNavigation.Dock = DockStyle.Left
+        msNavigation.Items.AddRange(New ToolStripItem() {menuHome, menuManajemen, menuCetakKartu, menuCetakLaporan, menuKembali, menuKeluar})
+        msNavigation.Location = New Point(0, 0)
+        msNavigation.Name = "msNavigation"
+        msNavigation.Size = New Size(101, 586)
+        msNavigation.TabIndex = 0
+        msNavigation.Text = "MenuStrip1"
         ' 
-        ' HomeToolStripMenuItem
+        ' menuHome
         ' 
-        HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
-        HomeToolStripMenuItem.Size = New Size(88, 19)
-        HomeToolStripMenuItem.Text = "Home"
+        menuHome.Name = "menuHome"
+        menuHome.Size = New Size(88, 19)
+        menuHome.Text = "Home"
         ' 
-        ' ManajemenToolStripMenuItem
+        ' menuManajemen
         ' 
-        ManajemenToolStripMenuItem.Name = "ManajemenToolStripMenuItem"
-        ManajemenToolStripMenuItem.Size = New Size(88, 19)
-        ManajemenToolStripMenuItem.Text = "Manajemen"
+        menuManajemen.Name = "menuManajemen"
+        menuManajemen.Size = New Size(88, 19)
+        menuManajemen.Text = "Manajemen"
         ' 
-        ' KembaliToolStripMenuItem
+        ' menuCetakKartu
         ' 
-        KembaliToolStripMenuItem.Name = "KembaliToolStripMenuItem"
-        KembaliToolStripMenuItem.Size = New Size(88, 19)
-        KembaliToolStripMenuItem.Text = "Cetak Kartu"
+        menuCetakKartu.Name = "menuCetakKartu"
+        menuCetakKartu.Size = New Size(88, 19)
+        menuCetakKartu.Text = "Cetak Kartu"
         ' 
-        ' CetakLaporanToolStripMenuItem
+        ' menuCetakLaporan
         ' 
-        CetakLaporanToolStripMenuItem.Name = "CetakLaporanToolStripMenuItem"
-        CetakLaporanToolStripMenuItem.Size = New Size(88, 19)
-        CetakLaporanToolStripMenuItem.Text = "Cetak Laporan"
+        menuCetakLaporan.Name = "menuCetakLaporan"
+        menuCetakLaporan.Size = New Size(88, 19)
+        menuCetakLaporan.Text = "Cetak Laporan"
         ' 
-        ' KembaliToolStripMenuItem1
+        ' menuKembali
         ' 
-        KembaliToolStripMenuItem1.Name = "KembaliToolStripMenuItem1"
-        KembaliToolStripMenuItem1.Size = New Size(88, 19)
-        KembaliToolStripMenuItem1.Text = "Kembali"
+        menuKembali.Name = "menuKembali"
+        menuKembali.Size = New Size(88, 19)
+        menuKembali.Text = "Kembali"
         ' 
-        ' KeluarToolStripMenuItem
+        ' menuKeluar
         ' 
-        KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        KeluarToolStripMenuItem.Size = New Size(88, 19)
-        KeluarToolStripMenuItem.Text = "Keluar"
+        menuKeluar.Name = "menuKeluar"
+        menuKeluar.Size = New Size(88, 19)
+        menuKeluar.Text = "Keluar"
         ' 
-        ' FlowLayoutPanel1
+        ' pnlMainContent
         ' 
-        FlowLayoutPanel1.Controls.Add(Panel1)
-        FlowLayoutPanel1.Controls.Add(Panel2)
-        FlowLayoutPanel1.Controls.Add(Panel3)
-        FlowLayoutPanel1.Location = New Point(155, 35)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(697, 420)
-        FlowLayoutPanel1.TabIndex = 1
-        ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = SystemColors.ControlDark
-        Panel1.Location = New Point(3, 3)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(200, 100)
-        Panel1.TabIndex = 0
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BackColor = SystemColors.ControlDark
-        Panel2.Location = New Point(209, 3)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(200, 100)
-        Panel2.TabIndex = 1
-        ' 
-        ' Panel3
-        ' 
-        Panel3.BackColor = SystemColors.ControlDark
-        Panel3.Location = New Point(415, 3)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(200, 100)
-        Panel3.TabIndex = 2
+        pnlMainContent.Location = New Point(101, -1)
+        pnlMainContent.Name = "pnlMainContent"
+        pnlMainContent.Size = New Size(844, 587)
+        pnlMainContent.TabIndex = 1
         ' 
         ' Home
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(945, 586)
-        Controls.Add(FlowLayoutPanel1)
-        Controls.Add(MenuStrip1)
-        MainMenuStrip = MenuStrip1
+        Controls.Add(pnlMainContent)
+        Controls.Add(msNavigation)
+        MainMenuStrip = msNavigation
         Name = "Home"
         Text = "Home"
-        MenuStrip1.ResumeLayout(False)
-        MenuStrip1.PerformLayout()
-        FlowLayoutPanel1.ResumeLayout(False)
+        msNavigation.ResumeLayout(False)
+        msNavigation.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents HomeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ManajemenToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents KembaliToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CetakLaporanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents KembaliToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents KeluarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents msNavigation As MenuStrip
+    Friend WithEvents menuHome As ToolStripMenuItem
+    Friend WithEvents menuManajemen As ToolStripMenuItem
+    Friend WithEvents menuCetakKartu As ToolStripMenuItem
+    Friend WithEvents menuCetakLaporan As ToolStripMenuItem
+    Friend WithEvents menuKembali As ToolStripMenuItem
+    Friend WithEvents menuKeluar As ToolStripMenuItem
+    Friend WithEvents pnlMainContent As Panel
 End Class

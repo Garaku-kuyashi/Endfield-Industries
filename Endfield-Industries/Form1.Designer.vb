@@ -22,28 +22,40 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        btnLoginBatal = New Button()
+        btnMasuk = New Button()
+        btnKeluar = New Button()
         SuspendLayout()
         ' 
-        ' btnLoginBatal
+        ' btnMasuk
         ' 
-        btnLoginBatal.Location = New Point(242, 181)
-        btnLoginBatal.Name = "btnLoginBatal"
-        btnLoginBatal.Size = New Size(75, 23)
-        btnLoginBatal.TabIndex = 5
-        btnLoginBatal.Text = "Batal"
-        btnLoginBatal.UseVisualStyleBackColor = True
+        btnMasuk.Location = New Point(242, 181)
+        btnMasuk.Name = "btnMasuk"
+        btnMasuk.Size = New Size(75, 23)
+        btnMasuk.TabIndex = 5
+        btnMasuk.Text = "Mausk"
+        btnMasuk.UseVisualStyleBackColor = True
+        ' 
+        ' btnKeluar
+        ' 
+        btnKeluar.Location = New Point(403, 181)
+        btnKeluar.Name = "btnKeluar"
+        btnKeluar.Size = New Size(75, 23)
+        btnKeluar.TabIndex = 6
+        btnKeluar.Text = "Keluar"
+        btnKeluar.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
-        Controls.Add(btnLoginBatal)
+        Controls.Add(btnKeluar)
+        Controls.Add(btnMasuk)
         Name = "Form1"
         Text = "Login-Form"
         ResumeLayout(False)
     End Sub
-    Friend WithEvents btnLoginBatal As Button
+    Friend WithEvents btnMasuk As Button
+    Friend WithEvents btnKeluar As Button
 
 End Class
