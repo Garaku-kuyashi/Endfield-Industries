@@ -28,8 +28,8 @@ Public Class PabrikManajemen
             Case "Resourcing" : tcSpek.TabPages.Add(tpResourcing)
             Case "Logistic" : tcSpek.TabPages.Add(tpLogistic)
             Case "Depot" : tcSpek.TabPages.Add(tpDepot)
-            Case "Productions I" : tcSpek.TabPages.Add(tpProd1)
-            Case "Productions II" : tcSpek.TabPages.Add(tpProd2)
+            Case "Production I" : tcSpek.TabPages.Add(tpProd1)
+            Case "Production II" : tcSpek.TabPages.Add(tpProd2)
             Case "Power" : tcSpek.TabPages.Add(tpPower)
             Case "Miscellaneous" : tcSpek.TabPages.Add(tpMisc)
             Case "Combat" : tcSpek.TabPages.Add(tpCombat)
@@ -54,7 +54,6 @@ Public Class PabrikManajemen
         Try
             Call ConnectionModule.Koneksi()
 
-            ' A. Insert ke Tabel Induk (tbl_alat)
             Dim sqlInduk As String = "INSERT INTO tbl_alat (kode_alat, nama_alat, kategori, wilayah, daya_terpakai, foto_path, deskripsi) " &
                                      "VALUES (@kode, @nama, @kat, @wil, @daya, @foto, @desk)"
             Dim cmdInduk = New MySqlCommand(sqlInduk, ConnectionModule.conn)
@@ -63,39 +62,37 @@ Public Class PabrikManajemen
             cmdInduk.Parameters.AddWithValue("@kat", cbKategori.Text)
             cmdInduk.Parameters.AddWithValue("@wil", cbWilayah.Text)
             cmdInduk.Parameters.AddWithValue("@daya", Val(txtDayaTerpakai.Text))
-            cmdInduk.Parameters.AddWithValue("@foto", "-") ' Sementara default strip jika belum input gambar
+            cmdInduk.Parameters.AddWithValue("@foto", "-")
             cmdInduk.Parameters.AddWithValue("@desk", rtxtDesk.Text)
             cmdInduk.ExecuteNonQuery()
 
             Dim lastID As Integer = cmdInduk.LastInsertedId
 
-            ' B. Insert ke Tabel Turunan (tbl_spesifikasi) menggunakan struktur parameter dinamis
+
             Dim sqlSpek As String = "INSERT INTO tbl_spesifikasi (id_alat, val_1, val_2, val_3, val_4, txt_1, txt_2, bool_1) VALUES (@id, @v1, @v2, @v3, @v4, @t1, @t2, @b1)"
             Dim cmdSpek = New MySqlCommand(sqlSpek, ConnectionModule.conn)
             cmdSpek.Parameters.AddWithValue("@id", lastID)
 
-            ' Definisikan default state penampung database generik
             Dim v1 As Double = 0, v2 As Double = 0, v3 As Double = 0, v4 As Double = 0
             Dim t1 As String = "-", t2 As String = "-"
             Dim b1 As Integer = 0
 
-            ' Pemetaan variabel disesuaikan persis dengan jumlah & nama kontrol per tab panel Anda
             Select Case cbKategori.Text
-                Case "Resourcing" ' 3 Komponen
+                Case "Resourcing"
                     t1 = cbTipeMineral.Text : v1 = nudLaju.Value : t2 = txtPersen.Text
-                Case "Logistic" ' 4 Komponen
+                Case "Logistic"
                     t1 = cbTipeJalur.Text : v1 = nudAngkut.Value : v2 = nudKecepatan.Value : t2 = txtFilter.Text
-                Case "Depot" ' 2 Komponen
+                Case "Depot"
                     v1 = nudKapasitasMaks.Value : b1 = If(cb1.Checked, 1, 0)
-                Case "Productions I" ' 3 Komponen
+                Case "Productions I"
                     t1 = txtInputMath.Text : t2 = txtOutputMath.Text : v1 = nudWaktuProses.Value
-                Case "Productions II" ' 3 Komponen
+                Case "Productions II"
                     v1 = nudjumlahKomp.Value : t1 = cbModulTambahan.Text : v2 = nudLevel.Value
-                Case "Power" ' 2 Komponen
+                Case "Power"
                     v1 = nudOutputDaya.Value : v2 = nudRadius.Value
-                Case "Miscellaneous" ' 3 Komponen
+                Case "Miscellaneous"
                     t1 = txtFungsiUtama.Text : v1 = nudKonsumsiPemeliharaan.Value : b1 = If(cbAda.Checked, 1, 0)
-                Case "Combat" ' 4 Komponen
+                Case "Combat"
                     t1 = cbTipeSenjata.Text : v1 = nudDayaSerang.Value : t2 = cbTipeKerusakan.Text : v2 = nudDurabilitas.Value
             End Select
 
