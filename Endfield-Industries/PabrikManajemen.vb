@@ -16,6 +16,7 @@ Public Class PabrikManajemen
     End Sub
 
     Private Sub cbKategori_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbKategori.SelectedIndexChanged
+        ErrorProvider1.SetError(cbKategori, "")
         If cbKategori.SelectedIndex = -1 Then Exit Sub
 
         Dim inisial As String = cbKategori.Text.Substring(0, 1).ToUpper()
@@ -46,30 +47,34 @@ Public Class PabrikManajemen
     End Sub
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-        If txtNama.Text.Trim() = "" Or cbKategori.SelectedIndex = -1 Then
-            MessageBox.Show("Nama Alat dan Kategori harus diisi!", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
-        End If
+        ClearAllErrors(ErrorProvider1)
+        If Not ValidateMainForm(txtNama, cbKategori, cbWilayah, txtDayaTerpakai, ErrorProvider1) Then Exit Sub
+        If Not ValidateKategori(cbKategori.Text, Me, ErrorProvider1) Then Exit Sub
 
         Try
             Call ConnectionModule.Koneksi()
+            If txtKodeAlat.Text.Trim() = "" Then
+                MessageBox.Show("Kode alat belum terbentuk!", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+            End If
 
             Dim sqlInduk As String = "INSERT INTO tbl_alat (kode_alat, nama_alat, kategori, wilayah, daya_terpakai, foto_path, deskripsi) " &
-                                     "VALUES (@kode, @nama, @kat, @wil, @daya, @foto, @desk)"
+                                 "VALUES (@kode, @nama, @kat, @wil, @daya, @foto, @desk)"
+
             Dim cmdInduk = New MySqlCommand(sqlInduk, ConnectionModule.conn)
             cmdInduk.Parameters.AddWithValue("@kode", txtKodeAlat.Text)
             cmdInduk.Parameters.AddWithValue("@nama", txtNama.Text)
             cmdInduk.Parameters.AddWithValue("@kat", cbKategori.Text)
             cmdInduk.Parameters.AddWithValue("@wil", cbWilayah.Text)
-            cmdInduk.Parameters.AddWithValue("@daya", Val(txtDayaTerpakai.Text))
+            cmdInduk.Parameters.AddWithValue("@daya", Convert.ToDouble(txtDayaTerpakai.Text))
             cmdInduk.Parameters.AddWithValue("@foto", "-")
             cmdInduk.Parameters.AddWithValue("@desk", rtxtDesk.Text)
+
             cmdInduk.ExecuteNonQuery()
 
             Dim lastID As Integer = cmdInduk.LastInsertedId
-
-
             Dim sqlSpek As String = "INSERT INTO tbl_spesifikasi (id_alat, val_1, val_2, val_3, val_4, txt_1, txt_2, bool_1) VALUES (@id, @v1, @v2, @v3, @v4, @t1, @t2, @b1)"
+
             Dim cmdSpek = New MySqlCommand(sqlSpek, ConnectionModule.conn)
             cmdSpek.Parameters.AddWithValue("@id", lastID)
 
@@ -79,40 +84,71 @@ Public Class PabrikManajemen
 
             Select Case cbKategori.Text
                 Case "Resourcing"
-                    t1 = cbTipeMineral.Text : v1 = nudLaju.Value : t2 = txtPersen.Text
+                    t1 = cbTipeMineral.Text
+                    v1 = nudLaju.Value
+                    t2 = txtPersen.Text
+
                 Case "Logistic"
-                    t1 = cbTipeJalur.Text : v1 = nudAngkut.Value : v2 = nudKecepatan.Value : t2 = txtFilter.Text
+                    t1 = cbTipeJalur.Text
+                    v1 = nudAngkut.Value
+                    v2 = nudKecepatan.Value
+                    t2 = txtFilter.Text
+
                 Case "Depot"
-                    v1 = nudKapasitasMaks.Value : b1 = If(cb1.Checked, 1, 0)
+                    v1 = nudKapasitasMaks.Value
+                    b1 = If(cb1.Checked, 1, 0)
+
                 Case "Productions I"
-                    t1 = txtInputMath.Text : t2 = txtOutputMath.Text : v1 = nudWaktuProses.Value
+                    t1 = txtInputMath.Text
+                    t2 = txtOutputMath.Text
+                    v1 = nudWaktuProses.Value
+
                 Case "Productions II"
-                    v1 = nudjumlahKomp.Value : t1 = cbModulTambahan.Text : v2 = nudLevel.Value
+                    v1 = nudjumlahKomp.Value
+                    t1 = cbModulTambahan.Text
+                    v2 = nudLevel.Value
+
                 Case "Power"
-                    v1 = nudOutputDaya.Value : v2 = nudRadius.Value
+                    v1 = nudOutputDaya.Value
+                    v2 = nudRadius.Value
+
                 Case "Miscellaneous"
-                    t1 = txtFungsiUtama.Text : v1 = nudKonsumsiPemeliharaan.Value : b1 = If(cbAda.Checked, 1, 0)
+                    t1 = txtFungsiUtama.Text
+                    v1 = nudKonsumsiPemeliharaan.Value
+                    b1 = If(cbAda.Checked, 1, 0)
+
                 Case "Combat"
-                    t1 = cbTipeSenjata.Text : v1 = nudDayaSerang.Value : t2 = cbTipeKerusakan.Text : v2 = nudDurabilitas.Value
+                    t1 = cbTipeSenjata.Text
+                    v1 = nudDayaSerang.Value
+                    t2 = cbTipeKerusakan.Text
+                    v2 = nudDurabilitas.Value
             End Select
 
-            cmdSpek.Parameters.AddWithValue("@v1", v1) : cmdSpek.Parameters.AddWithValue("@v2", v2)
-            cmdSpek.Parameters.AddWithValue("@v3", v3) : cmdSpek.Parameters.AddWithValue("@v4", v4)
-            cmdSpek.Parameters.AddWithValue("@t1", t1) : cmdSpek.Parameters.AddWithValue("@t2", t2)
+            cmdSpek.Parameters.AddWithValue("@v1", v1)
+            cmdSpek.Parameters.AddWithValue("@v2", v2)
+            cmdSpek.Parameters.AddWithValue("@v3", v3)
+            cmdSpek.Parameters.AddWithValue("@v4", v4)
+            cmdSpek.Parameters.AddWithValue("@t1", t1)
+            cmdSpek.Parameters.AddWithValue("@t2", t2)
             cmdSpek.Parameters.AddWithValue("@b1", b1)
+
             cmdSpek.ExecuteNonQuery()
 
-            MsgBox("Data GudangKu & Spesifikasi Berhasil Disimpan!", MsgBoxStyle.Information, "Sukses")
+            MsgBox("Data berhasil disimpan!", MsgBoxStyle.Information, "Sukses")
+
             Call TampilData()
             Call ClearForm()
+
         Catch ex As Exception
             MsgBox("Error Simpan: " & ex.Message, MsgBoxStyle.Critical)
         Finally
             ConnectionModule.conn.Close()
         End Try
+
     End Sub
 
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
+        ClearAllErrors(ErrorProvider1)
         If dgvData.CurrentRow Is Nothing Then
             MsgBox("Pilih baris pada tabel data terlebih dahulu!", MsgBoxStyle.Exclamation, "Perhatian")
             Exit Sub
@@ -343,6 +379,19 @@ Public Class PabrikManajemen
 
         tcSpek.TabPages.Clear()
         txtNama.Focus()
+        ErrorProvider1.Clear()
+    End Sub
+
+    Private Sub txtNama_TextChanged(sender As Object, e As EventArgs) Handles txtNama.TextChanged
+        ErrorProvider1.SetError(txtNama, "")
+    End Sub
+
+    Private Sub txtDayaTerpakai_TextChanged(sender As Object, e As EventArgs) Handles txtDayaTerpakai.TextChanged
+        ErrorProvider1.SetError(txtDayaTerpakai, "")
+    End Sub
+
+    Private Sub cbWilayah_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWilayah.SelectedIndexChanged
+        ErrorProvider1.SetError(cbWilayah, "")
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
