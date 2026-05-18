@@ -23,10 +23,10 @@ Partial Class uc_Home
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         pnlTotalAlat = New Panel()
-        pnlPersenWilayah = New Panel()
-        pnlTotalEnergi = New Panel()
         lblTotalAlat = New Label()
+        pnlPersenWilayah = New Panel()
         lblPersenWilayah = New Label()
+        pnlTotalEnergi = New Panel()
         lblTotalEnergi = New Label()
         pnlTotalAlat.SuspendLayout()
         pnlPersenWilayah.SuspendLayout()
@@ -42,6 +42,15 @@ Partial Class uc_Home
         pnlTotalAlat.Size = New Size(200, 100)
         pnlTotalAlat.TabIndex = 0
         ' 
+        ' lblTotalAlat
+        ' 
+        lblTotalAlat.AutoSize = True
+        lblTotalAlat.Location = New Point(23, 18)
+        lblTotalAlat.Name = "lblTotalAlat"
+        lblTotalAlat.Size = New Size(41, 15)
+        lblTotalAlat.TabIndex = 0
+        lblTotalAlat.Text = "Label1"
+        ' 
         ' pnlPersenWilayah
         ' 
         pnlPersenWilayah.BackColor = SystemColors.ActiveBorder
@@ -50,6 +59,15 @@ Partial Class uc_Home
         pnlPersenWilayah.Name = "pnlPersenWilayah"
         pnlPersenWilayah.Size = New Size(200, 100)
         pnlPersenWilayah.TabIndex = 1
+        ' 
+        ' lblPersenWilayah
+        ' 
+        lblPersenWilayah.AutoSize = True
+        lblPersenWilayah.Location = New Point(28, 18)
+        lblPersenWilayah.Name = "lblPersenWilayah"
+        lblPersenWilayah.Size = New Size(41, 15)
+        lblPersenWilayah.TabIndex = 0
+        lblPersenWilayah.Text = "Label2"
         ' 
         ' pnlTotalEnergi
         ' 
@@ -60,28 +78,10 @@ Partial Class uc_Home
         pnlTotalEnergi.Size = New Size(200, 100)
         pnlTotalEnergi.TabIndex = 1
         ' 
-        ' lblTotalAlat
-        ' 
-        lblTotalAlat.AutoSize = True
-        lblTotalAlat.Location = New Point(23, 18)
-        lblTotalAlat.Name = "lblTotalAlat"
-        lblTotalAlat.Size = New Size(41, 15)
-        lblTotalAlat.TabIndex = 0
-        lblTotalAlat.Text = "Label1"
-        ' 
-        ' lblPersenWilayah
-        ' 
-        lblPersenWilayah.AutoSize = True
-        lblPersenWilayah.Location = New Point(29, 20)
-        lblPersenWilayah.Name = "lblPersenWilayah"
-        lblPersenWilayah.Size = New Size(41, 15)
-        lblPersenWilayah.TabIndex = 0
-        lblPersenWilayah.Text = "Label2"
-        ' 
         ' lblTotalEnergi
         ' 
         lblTotalEnergi.AutoSize = True
-        lblTotalEnergi.Location = New Point(36, 32)
+        lblTotalEnergi.Location = New Point(34, 18)
         lblTotalEnergi.Name = "lblTotalEnergi"
         lblTotalEnergi.Size = New Size(41, 15)
         lblTotalEnergi.TabIndex = 0
@@ -95,7 +95,7 @@ Partial Class uc_Home
         Controls.Add(pnlPersenWilayah)
         Controls.Add(pnlTotalAlat)
         Name = "uc_Home"
-        Size = New Size(894, 464)
+        Size = New Size(961, 541)
         pnlTotalAlat.ResumeLayout(False)
         pnlTotalAlat.PerformLayout()
         pnlPersenWilayah.ResumeLayout(False)

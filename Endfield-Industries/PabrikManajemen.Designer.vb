@@ -147,48 +147,43 @@ Partial Class PabrikManajemen
         Panel1.Controls.Add(btnSimpan)
         Panel1.Controls.Add(dgvData)
         Panel1.Controls.Add(txtCari)
-        Panel1.Location = New Point(5, 4)
-        Panel1.Margin = New Padding(3, 4, 3, 4)
+        Panel1.Location = New Point(4, 3)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(359, 813)
+        Panel1.Size = New Size(323, 610)
         Panel1.TabIndex = 0
         ' 
         ' btnClear
         ' 
-        btnClear.Location = New Point(169, 661)
-        btnClear.Margin = New Padding(3, 4, 3, 4)
+        btnClear.Location = New Point(148, 496)
         btnClear.Name = "btnClear"
-        btnClear.Size = New Size(146, 31)
+        btnClear.Size = New Size(128, 23)
         btnClear.TabIndex = 7
         btnClear.Text = "Clear"
         btnClear.UseVisualStyleBackColor = True
         ' 
         ' btnHapus
         ' 
-        btnHapus.Location = New Point(25, 661)
-        btnHapus.Margin = New Padding(3, 4, 3, 4)
+        btnHapus.Location = New Point(22, 496)
         btnHapus.Name = "btnHapus"
-        btnHapus.Size = New Size(137, 31)
+        btnHapus.Size = New Size(120, 23)
         btnHapus.TabIndex = 6
         btnHapus.Text = "Hapus"
         btnHapus.UseVisualStyleBackColor = True
         ' 
         ' btnUbah
         ' 
-        btnUbah.Location = New Point(169, 623)
-        btnUbah.Margin = New Padding(3, 4, 3, 4)
+        btnUbah.Location = New Point(148, 467)
         btnUbah.Name = "btnUbah"
-        btnUbah.Size = New Size(146, 31)
+        btnUbah.Size = New Size(128, 23)
         btnUbah.TabIndex = 5
         btnUbah.Text = "Ubah"
         btnUbah.UseVisualStyleBackColor = True
         ' 
         ' btnSimpan
         ' 
-        btnSimpan.Location = New Point(25, 623)
-        btnSimpan.Margin = New Padding(3, 4, 3, 4)
+        btnSimpan.Location = New Point(22, 467)
         btnSimpan.Name = "btnSimpan"
-        btnSimpan.Size = New Size(137, 31)
+        btnSimpan.Size = New Size(120, 23)
         btnSimpan.TabIndex = 4
         btnSimpan.Text = "Simpan"
         btnSimpan.UseVisualStyleBackColor = True
@@ -196,24 +191,22 @@ Partial Class PabrikManajemen
         ' dgvData
         ' 
         dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvData.Location = New Point(25, 120)
-        dgvData.Margin = New Padding(3, 4, 3, 4)
+        dgvData.Location = New Point(22, 90)
         dgvData.Name = "dgvData"
         dgvData.RowHeadersWidth = 51
-        dgvData.Size = New Size(290, 495)
+        dgvData.Size = New Size(254, 371)
         dgvData.TabIndex = 1
         ' 
         ' txtCari
         ' 
-        txtCari.Location = New Point(25, 41)
-        txtCari.Margin = New Padding(3, 4, 3, 4)
+        txtCari.Location = New Point(22, 31)
         txtCari.Name = "txtCari"
-        txtCari.Size = New Size(290, 27)
+        txtCari.Size = New Size(254, 23)
         txtCari.TabIndex = 0
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = SystemColors.ControlLight
+        Panel2.BackColor = Color.Transparent
         Panel2.Controls.Add(Label5)
         Panel2.Controls.Add(Label4)
         Panel2.Controls.Add(Label3)
@@ -226,108 +219,101 @@ Partial Class PabrikManajemen
         Panel2.Controls.Add(txtNama)
         Panel2.Controls.Add(Panel3)
         Panel2.Controls.Add(FlowLayoutPanel1)
-        Panel2.Location = New Point(370, 4)
-        Panel2.Margin = New Padding(3, 4, 3, 4)
+        Panel2.Location = New Point(324, 3)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(694, 817)
+        Panel2.Size = New Size(607, 613)
         Panel2.TabIndex = 1
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(23, 377)
+        Label5.Location = New Point(20, 283)
         Label5.Name = "Label5"
-        Label5.Size = New Size(80, 20)
+        Label5.Size = New Size(62, 15)
         Label5.TabIndex = 11
         Label5.Text = "Total Daya"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(23, 327)
+        Label4.Location = New Point(20, 245)
         Label4.Name = "Label4"
-        Label4.Size = New Size(62, 20)
+        Label4.Size = New Size(49, 15)
         Label4.TabIndex = 10
         Label4.Text = "Wilayah"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(23, 243)
+        Label3.Location = New Point(20, 182)
         Label3.Name = "Label3"
-        Label3.Size = New Size(75, 20)
+        Label3.Size = New Size(58, 15)
         Label3.TabIndex = 9
         Label3.Text = "Kode Alat"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(23, 161)
+        Label2.Location = New Point(20, 121)
         Label2.Name = "Label2"
-        Label2.Size = New Size(64, 20)
+        Label2.Size = New Size(50, 15)
         Label2.TabIndex = 8
         Label2.Text = "kategori"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(23, 96)
+        Label1.Location = New Point(20, 72)
         Label1.Name = "Label1"
-        Label1.Size = New Size(49, 20)
+        Label1.Size = New Size(39, 15)
         Label1.TabIndex = 7
         Label1.Text = "Nama"
         ' 
         ' txtDayaTerpakai
         ' 
-        txtDayaTerpakai.Location = New Point(121, 367)
-        txtDayaTerpakai.Margin = New Padding(3, 4, 3, 4)
+        txtDayaTerpakai.Location = New Point(106, 275)
         txtDayaTerpakai.Name = "txtDayaTerpakai"
-        txtDayaTerpakai.Size = New Size(223, 27)
+        txtDayaTerpakai.Size = New Size(196, 23)
         txtDayaTerpakai.TabIndex = 6
         ' 
         ' cbWilayah
         ' 
         cbWilayah.FormattingEnabled = True
         cbWilayah.Items.AddRange(New Object() {"Valley-IV", "Wuling", "Mix"})
-        cbWilayah.Location = New Point(121, 316)
-        cbWilayah.Margin = New Padding(3, 4, 3, 4)
+        cbWilayah.Location = New Point(106, 237)
         cbWilayah.Name = "cbWilayah"
-        cbWilayah.Size = New Size(225, 28)
+        cbWilayah.Size = New Size(197, 23)
         cbWilayah.TabIndex = 5
         ' 
         ' cbKategori
         ' 
         cbKategori.FormattingEnabled = True
         cbKategori.Items.AddRange(New Object() {"Resourcing", "Logistics", "Depot", "Production I", "Production II", "Power", "Miscellaneous", "Combat"})
-        cbKategori.Location = New Point(121, 151)
-        cbKategori.Margin = New Padding(3, 4, 3, 4)
+        cbKategori.Location = New Point(106, 113)
         cbKategori.Name = "cbKategori"
-        cbKategori.Size = New Size(223, 28)
+        cbKategori.Size = New Size(196, 23)
         cbKategori.TabIndex = 4
         ' 
         ' txtKodeAlat
         ' 
-        txtKodeAlat.Location = New Point(121, 231)
-        txtKodeAlat.Margin = New Padding(3, 4, 3, 4)
+        txtKodeAlat.Location = New Point(106, 173)
         txtKodeAlat.Name = "txtKodeAlat"
-        txtKodeAlat.Size = New Size(228, 27)
+        txtKodeAlat.Size = New Size(200, 23)
         txtKodeAlat.TabIndex = 3
         ' 
         ' txtNama
         ' 
-        txtNama.Location = New Point(121, 92)
-        txtNama.Margin = New Padding(3, 4, 3, 4)
+        txtNama.Location = New Point(106, 69)
         txtNama.Name = "txtNama"
-        txtNama.Size = New Size(225, 27)
+        txtNama.Size = New Size(197, 23)
         txtNama.TabIndex = 2
         ' 
         ' Panel3
         ' 
         Panel3.Controls.Add(GroupBox2)
-        Panel3.Location = New Point(79, 472)
-        Panel3.Margin = New Padding(3, 4, 3, 4)
+        Panel3.Location = New Point(69, 354)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(574, 299)
+        Panel3.Size = New Size(502, 224)
         Panel3.TabIndex = 1
         ' 
         ' GroupBox2
@@ -335,40 +321,35 @@ Partial Class PabrikManajemen
         GroupBox2.Controls.Add(btnInput)
         GroupBox2.Controls.Add(rtxtDesk)
         GroupBox2.Controls.Add(pcAlat)
-        GroupBox2.Location = New Point(2, 4)
-        GroupBox2.Margin = New Padding(3, 4, 3, 4)
+        GroupBox2.Location = New Point(2, 3)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Padding = New Padding(3, 4, 3, 4)
-        GroupBox2.Size = New Size(503, 295)
+        GroupBox2.Size = New Size(440, 221)
         GroupBox2.TabIndex = 0
         GroupBox2.TabStop = False
         GroupBox2.Text = "GroupBox2"
         ' 
         ' btnInput
         ' 
-        btnInput.Location = New Point(40, 256)
-        btnInput.Margin = New Padding(3, 4, 3, 4)
+        btnInput.Location = New Point(35, 192)
         btnInput.Name = "btnInput"
-        btnInput.Size = New Size(86, 31)
+        btnInput.Size = New Size(75, 23)
         btnInput.TabIndex = 3
         btnInput.Text = "Input"
         btnInput.UseVisualStyleBackColor = True
         ' 
         ' rtxtDesk
         ' 
-        rtxtDesk.Location = New Point(157, 48)
-        rtxtDesk.Margin = New Padding(3, 4, 3, 4)
+        rtxtDesk.Location = New Point(137, 36)
         rtxtDesk.Name = "rtxtDesk"
-        rtxtDesk.Size = New Size(323, 191)
+        rtxtDesk.Size = New Size(283, 144)
         rtxtDesk.TabIndex = 2
         rtxtDesk.Text = "*Deskripsikan kegunaan Alat ini"
         ' 
         ' pcAlat
         ' 
-        pcAlat.Location = New Point(25, 48)
-        pcAlat.Margin = New Padding(3, 4, 3, 4)
+        pcAlat.Location = New Point(22, 36)
         pcAlat.Name = "pcAlat"
-        pcAlat.Size = New Size(114, 192)
+        pcAlat.Size = New Size(100, 144)
         pcAlat.SizeMode = PictureBoxSizeMode.StretchImage
         pcAlat.TabIndex = 0
         pcAlat.TabStop = False
@@ -376,10 +357,9 @@ Partial Class PabrikManajemen
         ' FlowLayoutPanel1
         ' 
         FlowLayoutPanel1.Controls.Add(tcSpek)
-        FlowLayoutPanel1.Location = New Point(353, 92)
-        FlowLayoutPanel1.Margin = New Padding(3, 4, 3, 4)
+        FlowLayoutPanel1.Location = New Point(309, 69)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(305, 260)
+        FlowLayoutPanel1.Size = New Size(267, 195)
         FlowLayoutPanel1.TabIndex = 0
         ' 
         ' tcSpek
@@ -392,11 +372,10 @@ Partial Class PabrikManajemen
         tcSpek.Controls.Add(tpPower)
         tcSpek.Controls.Add(tpMisc)
         tcSpek.Controls.Add(tpCombat)
-        tcSpek.Location = New Point(3, 4)
-        tcSpek.Margin = New Padding(3, 4, 3, 4)
+        tcSpek.Location = New Point(3, 3)
         tcSpek.Name = "tcSpek"
         tcSpek.SelectedIndex = 0
-        tcSpek.Size = New Size(302, 256)
+        tcSpek.Size = New Size(264, 192)
         tcSpek.TabIndex = 0
         ' 
         ' tpResourcing
@@ -407,11 +386,10 @@ Partial Class PabrikManajemen
         tpResourcing.Controls.Add(cbTipeMineral)
         tpResourcing.Controls.Add(nudLaju)
         tpResourcing.Controls.Add(txtPersen)
-        tpResourcing.Location = New Point(4, 29)
-        tpResourcing.Margin = New Padding(3, 4, 3, 4)
+        tpResourcing.Location = New Point(4, 24)
         tpResourcing.Name = "tpResourcing"
-        tpResourcing.Padding = New Padding(3, 4, 3, 4)
-        tpResourcing.Size = New Size(294, 223)
+        tpResourcing.Padding = New Padding(3, 3, 3, 3)
+        tpResourcing.Size = New Size(256, 164)
         tpResourcing.TabIndex = 0
         tpResourcing.Text = "Resourcing"
         tpResourcing.UseVisualStyleBackColor = True
@@ -419,53 +397,50 @@ Partial Class PabrikManajemen
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(158, 175)
+        Label8.Location = New Point(138, 131)
         Label8.Name = "Label8"
-        Label8.Size = New Size(151, 20)
+        Label8.Size = New Size(122, 15)
         Label8.TabIndex = 14
         Label8.Text = "Efisiensi Penambahan"
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(176, 113)
+        Label7.Location = New Point(154, 85)
         Label7.Name = "Label7"
-        Label7.Size = New Size(96, 20)
+        Label7.Size = New Size(77, 15)
         Label7.TabIndex = 13
         Label7.Text = "Laju Ekstraksi"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(176, 52)
+        Label6.Location = New Point(154, 39)
         Label6.Name = "Label6"
-        Label6.Size = New Size(92, 20)
+        Label6.Size = New Size(73, 15)
         Label6.TabIndex = 12
         Label6.Text = "Tipe Mineral"
         ' 
         ' cbTipeMineral
         ' 
         cbTipeMineral.FormattingEnabled = True
-        cbTipeMineral.Location = New Point(18, 48)
-        cbTipeMineral.Margin = New Padding(3, 4, 3, 4)
+        cbTipeMineral.Location = New Point(16, 36)
         cbTipeMineral.Name = "cbTipeMineral"
-        cbTipeMineral.Size = New Size(135, 28)
+        cbTipeMineral.Size = New Size(119, 23)
         cbTipeMineral.TabIndex = 2
         ' 
         ' nudLaju
         ' 
-        nudLaju.Location = New Point(18, 104)
-        nudLaju.Margin = New Padding(3, 4, 3, 4)
+        nudLaju.Location = New Point(16, 78)
         nudLaju.Name = "nudLaju"
-        nudLaju.Size = New Size(136, 27)
+        nudLaju.Size = New Size(119, 23)
         nudLaju.TabIndex = 1
         ' 
         ' txtPersen
         ' 
-        txtPersen.Location = New Point(18, 164)
-        txtPersen.Margin = New Padding(3, 4, 3, 4)
+        txtPersen.Location = New Point(16, 123)
         txtPersen.Name = "txtPersen"
-        txtPersen.Size = New Size(135, 27)
+        txtPersen.Size = New Size(119, 23)
         txtPersen.TabIndex = 0
         ' 
         ' tpLogistic
@@ -478,11 +453,10 @@ Partial Class PabrikManajemen
         tpLogistic.Controls.Add(nudKecepatan)
         tpLogistic.Controls.Add(nudAngkut)
         tpLogistic.Controls.Add(cbTipeJalur)
-        tpLogistic.Location = New Point(4, 29)
-        tpLogistic.Margin = New Padding(3, 4, 3, 4)
+        tpLogistic.Location = New Point(4, 24)
         tpLogistic.Name = "tpLogistic"
-        tpLogistic.Padding = New Padding(3, 4, 3, 4)
-        tpLogistic.Size = New Size(294, 223)
+        tpLogistic.Padding = New Padding(3, 3, 3, 3)
+        tpLogistic.Size = New Size(256, 164)
         tpLogistic.TabIndex = 1
         tpLogistic.Text = "Logistics"
         tpLogistic.UseVisualStyleBackColor = True
@@ -490,70 +464,66 @@ Partial Class PabrikManajemen
         ' Label12
         ' 
         Label12.AutoSize = True
-        Label12.Location = New Point(186, 187)
+        Label12.Location = New Point(163, 140)
         Label12.Name = "Label12"
-        Label12.Size = New Size(76, 20)
+        Label12.Size = New Size(60, 15)
         Label12.TabIndex = 7
         Label12.Text = "Filter Item"
         ' 
         ' Label11
         ' 
         Label11.AutoSize = True
-        Label11.Location = New Point(142, 140)
+        Label11.Location = New Point(124, 105)
         Label11.Name = "Label11"
-        Label11.Size = New Size(143, 20)
+        Label11.Size = New Size(114, 15)
         Label11.TabIndex = 6
         Label11.Text = "Kecepatanh Transfer"
         ' 
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Location = New Point(179, 68)
+        Label10.Location = New Point(157, 51)
         Label10.Name = "Label10"
-        Label10.Size = New Size(123, 20)
+        Label10.Size = New Size(98, 15)
         Label10.TabIndex = 5
         Label10.Text = "Kapasitas Angkut"
         ' 
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(207, 32)
+        Label9.Location = New Point(181, 24)
         Label9.Name = "Label9"
-        Label9.Size = New Size(72, 20)
+        Label9.Size = New Size(57, 15)
         Label9.TabIndex = 4
         Label9.Text = "Tipe Jalur"
         ' 
         ' txtFilter
         ' 
-        txtFilter.Location = New Point(38, 176)
-        txtFilter.Margin = New Padding(3, 4, 3, 4)
+        txtFilter.Location = New Point(33, 132)
         txtFilter.Name = "txtFilter"
-        txtFilter.Size = New Size(114, 27)
+        txtFilter.Size = New Size(100, 23)
         txtFilter.TabIndex = 3
         ' 
         ' nudKecepatan
         ' 
-        nudKecepatan.Location = New Point(26, 137)
-        nudKecepatan.Margin = New Padding(3, 4, 3, 4)
+        nudKecepatan.Location = New Point(23, 103)
         nudKecepatan.Name = "nudKecepatan"
-        nudKecepatan.Size = New Size(103, 27)
+        nudKecepatan.Size = New Size(90, 23)
         nudKecepatan.TabIndex = 2
         ' 
         ' nudAngkut
         ' 
-        nudAngkut.Location = New Point(34, 80)
-        nudAngkut.Margin = New Padding(3, 4, 3, 4)
+        nudAngkut.Location = New Point(30, 60)
         nudAngkut.Name = "nudAngkut"
-        nudAngkut.Size = New Size(137, 27)
+        nudAngkut.Size = New Size(120, 23)
         nudAngkut.TabIndex = 1
         ' 
         ' cbTipeJalur
         ' 
         cbTipeJalur.FormattingEnabled = True
-        cbTipeJalur.Location = New Point(25, 27)
-        cbTipeJalur.Margin = New Padding(3, 4, 3, 4)
+        cbTipeJalur.Location = New Point(22, 20)
         cbTipeJalur.Name = "cbTipeJalur"
-        cbTipeJalur.Size = New Size(138, 28)
+        cbTipeJalur.Size = New Size(121, 23)
         cbTipeJalur.TabIndex = 0
         ' 
         ' tpDepot
@@ -563,11 +533,10 @@ Partial Class PabrikManajemen
         tpDepot.Controls.Add(nudKapasitasMaks)
         tpDepot.Controls.Add(cb2)
         tpDepot.Controls.Add(cb1)
-        tpDepot.Location = New Point(4, 29)
-        tpDepot.Margin = New Padding(3, 4, 3, 4)
+        tpDepot.Location = New Point(4, 24)
         tpDepot.Name = "tpDepot"
-        tpDepot.Padding = New Padding(3, 4, 3, 4)
-        tpDepot.Size = New Size(294, 223)
+        tpDepot.Padding = New Padding(3, 3, 3, 3)
+        tpDepot.Size = New Size(256, 164)
         tpDepot.TabIndex = 2
         tpDepot.Text = "Depot"
         tpDepot.UseVisualStyleBackColor = True
@@ -575,36 +544,34 @@ Partial Class PabrikManajemen
         ' Label14
         ' 
         Label14.AutoSize = True
-        Label14.Location = New Point(26, 87)
+        Label14.Location = New Point(23, 65)
         Label14.Name = "Label14"
-        Label14.Size = New Size(88, 20)
+        Label14.Size = New Size(69, 15)
         Label14.TabIndex = 5
         Label14.Text = "Auto Export"
         ' 
         ' Label13
         ' 
         Label13.AutoSize = True
-        Label13.Location = New Point(190, 44)
+        Label13.Location = New Point(166, 33)
         Label13.Name = "Label13"
-        Label13.Size = New Size(139, 20)
+        Label13.Size = New Size(110, 15)
         Label13.TabIndex = 4
         Label13.Text = "Kapasitas Maksimal"
         ' 
         ' nudKapasitasMaks
         ' 
-        nudKapasitasMaks.Location = New Point(33, 39)
-        nudKapasitasMaks.Margin = New Padding(3, 4, 3, 4)
+        nudKapasitasMaks.Location = New Point(29, 29)
         nudKapasitasMaks.Name = "nudKapasitasMaks"
-        nudKapasitasMaks.Size = New Size(137, 27)
+        nudKapasitasMaks.Size = New Size(120, 23)
         nudKapasitasMaks.TabIndex = 3
         ' 
         ' cb2
         ' 
         cb2.AutoSize = True
-        cb2.Location = New Point(39, 180)
-        cb2.Margin = New Padding(3, 4, 3, 4)
+        cb2.Location = New Point(34, 135)
         cb2.Name = "cb2"
-        cb2.Size = New Size(67, 24)
+        cb2.Size = New Size(55, 19)
         cb2.TabIndex = 2
         cb2.Text = "Tidak"
         cb2.UseVisualStyleBackColor = True
@@ -612,10 +579,9 @@ Partial Class PabrikManajemen
         ' cb1
         ' 
         cb1.AutoSize = True
-        cb1.Location = New Point(34, 125)
-        cb1.Margin = New Padding(3, 4, 3, 4)
+        cb1.Location = New Point(30, 94)
         cb1.Name = "cb1"
-        cb1.Size = New Size(46, 24)
+        cb1.Size = New Size(38, 19)
         cb1.TabIndex = 1
         cb1.Text = "Ya"
         cb1.UseVisualStyleBackColor = True
@@ -628,11 +594,10 @@ Partial Class PabrikManajemen
         tpProd1.Controls.Add(nudWaktuProses)
         tpProd1.Controls.Add(txtOutputMath)
         tpProd1.Controls.Add(txtInputMath)
-        tpProd1.Location = New Point(4, 29)
-        tpProd1.Margin = New Padding(3, 4, 3, 4)
+        tpProd1.Location = New Point(4, 24)
         tpProd1.Name = "tpProd1"
-        tpProd1.Padding = New Padding(3, 4, 3, 4)
-        tpProd1.Size = New Size(294, 223)
+        tpProd1.Padding = New Padding(3, 3, 3, 3)
+        tpProd1.Size = New Size(256, 164)
         tpProd1.TabIndex = 3
         tpProd1.Text = "Production I"
         tpProd1.UseVisualStyleBackColor = True
@@ -640,52 +605,49 @@ Partial Class PabrikManajemen
         ' Label17
         ' 
         Label17.AutoSize = True
-        Label17.Location = New Point(200, 152)
+        Label17.Location = New Point(175, 114)
         Label17.Name = "Label17"
-        Label17.Size = New Size(96, 20)
+        Label17.Size = New Size(78, 15)
         Label17.TabIndex = 5
         Label17.Text = "Waktu Proses"
         ' 
         ' Label16
         ' 
         Label16.AutoSize = True
-        Label16.Location = New Point(167, 95)
+        Label16.Location = New Point(146, 71)
         Label16.Name = "Label16"
-        Label16.Size = New Size(114, 20)
+        Label16.Size = New Size(91, 15)
         Label16.TabIndex = 4
         Label16.Text = "Output Material"
         ' 
         ' Label15
         ' 
         Label15.AutoSize = True
-        Label15.Location = New Point(174, 36)
+        Label15.Location = New Point(152, 27)
         Label15.Name = "Label15"
-        Label15.Size = New Size(102, 20)
+        Label15.Size = New Size(81, 15)
         Label15.TabIndex = 3
         Label15.Text = "Input Material"
         ' 
         ' nudWaktuProses
         ' 
-        nudWaktuProses.Location = New Point(42, 153)
-        nudWaktuProses.Margin = New Padding(3, 4, 3, 4)
+        nudWaktuProses.Location = New Point(37, 115)
         nudWaktuProses.Name = "nudWaktuProses"
-        nudWaktuProses.Size = New Size(137, 27)
+        nudWaktuProses.Size = New Size(120, 23)
         nudWaktuProses.TabIndex = 2
         ' 
         ' txtOutputMath
         ' 
-        txtOutputMath.Location = New Point(32, 85)
-        txtOutputMath.Margin = New Padding(3, 4, 3, 4)
+        txtOutputMath.Location = New Point(28, 64)
         txtOutputMath.Name = "txtOutputMath"
-        txtOutputMath.Size = New Size(114, 27)
+        txtOutputMath.Size = New Size(100, 23)
         txtOutputMath.TabIndex = 1
         ' 
         ' txtInputMath
         ' 
-        txtInputMath.Location = New Point(32, 27)
-        txtInputMath.Margin = New Padding(3, 4, 3, 4)
+        txtInputMath.Location = New Point(28, 20)
         txtInputMath.Name = "txtInputMath"
-        txtInputMath.Size = New Size(114, 27)
+        txtInputMath.Size = New Size(100, 23)
         txtInputMath.TabIndex = 0
         ' 
         ' tpProd2
@@ -696,11 +658,10 @@ Partial Class PabrikManajemen
         tpProd2.Controls.Add(nudLevel)
         tpProd2.Controls.Add(cbModulTambahan)
         tpProd2.Controls.Add(nudjumlahKomp)
-        tpProd2.Location = New Point(4, 29)
-        tpProd2.Margin = New Padding(3, 4, 3, 4)
+        tpProd2.Location = New Point(4, 24)
         tpProd2.Name = "tpProd2"
-        tpProd2.Padding = New Padding(3, 4, 3, 4)
-        tpProd2.Size = New Size(294, 223)
+        tpProd2.Padding = New Padding(3, 3, 3, 3)
+        tpProd2.Size = New Size(256, 164)
         tpProd2.TabIndex = 4
         tpProd2.Text = "Production II"
         tpProd2.UseVisualStyleBackColor = True
@@ -708,53 +669,50 @@ Partial Class PabrikManajemen
         ' Label20
         ' 
         Label20.AutoSize = True
-        Label20.Location = New Point(195, 152)
+        Label20.Location = New Point(171, 114)
         Label20.Name = "Label20"
-        Label20.Size = New Size(112, 20)
+        Label20.Size = New Size(89, 15)
         Label20.TabIndex = 5
         Label20.Text = "Level Teknologi"
         ' 
         ' Label19
         ' 
         Label19.AutoSize = True
-        Label19.Location = New Point(173, 89)
+        Label19.Location = New Point(151, 67)
         Label19.Name = "Label19"
-        Label19.Size = New Size(124, 20)
+        Label19.Size = New Size(101, 15)
         Label19.TabIndex = 4
         Label19.Text = "Modul Tambahan"
         ' 
         ' Label18
         ' 
         Label18.AutoSize = True
-        Label18.Location = New Point(187, 41)
+        Label18.Location = New Point(164, 31)
         Label18.Name = "Label18"
-        Label18.Size = New Size(127, 20)
+        Label18.Size = New Size(103, 15)
         Label18.TabIndex = 3
         Label18.Text = "Jumlah Gabungan"
         ' 
         ' nudLevel
         ' 
-        nudLevel.Location = New Point(33, 143)
-        nudLevel.Margin = New Padding(3, 4, 3, 4)
+        nudLevel.Location = New Point(29, 107)
         nudLevel.Name = "nudLevel"
-        nudLevel.Size = New Size(137, 27)
+        nudLevel.Size = New Size(120, 23)
         nudLevel.TabIndex = 2
         ' 
         ' cbModulTambahan
         ' 
         cbModulTambahan.FormattingEnabled = True
-        cbModulTambahan.Location = New Point(27, 85)
-        cbModulTambahan.Margin = New Padding(3, 4, 3, 4)
+        cbModulTambahan.Location = New Point(24, 64)
         cbModulTambahan.Name = "cbModulTambahan"
-        cbModulTambahan.Size = New Size(138, 28)
+        cbModulTambahan.Size = New Size(121, 23)
         cbModulTambahan.TabIndex = 1
         ' 
         ' nudjumlahKomp
         ' 
-        nudjumlahKomp.Location = New Point(30, 36)
-        nudjumlahKomp.Margin = New Padding(3, 4, 3, 4)
+        nudjumlahKomp.Location = New Point(26, 27)
         nudjumlahKomp.Name = "nudjumlahKomp"
-        nudjumlahKomp.Size = New Size(137, 27)
+        nudjumlahKomp.Size = New Size(120, 23)
         nudjumlahKomp.TabIndex = 0
         ' 
         ' tpPower
@@ -763,11 +721,10 @@ Partial Class PabrikManajemen
         tpPower.Controls.Add(Label21)
         tpPower.Controls.Add(nudRadius)
         tpPower.Controls.Add(nudOutputDaya)
-        tpPower.Location = New Point(4, 29)
-        tpPower.Margin = New Padding(3, 4, 3, 4)
+        tpPower.Location = New Point(4, 24)
         tpPower.Name = "tpPower"
-        tpPower.Padding = New Padding(3, 4, 3, 4)
-        tpPower.Size = New Size(294, 223)
+        tpPower.Padding = New Padding(3, 3, 3, 3)
+        tpPower.Size = New Size(256, 164)
         tpPower.TabIndex = 5
         tpPower.Text = "Power"
         tpPower.UseVisualStyleBackColor = True
@@ -775,35 +732,33 @@ Partial Class PabrikManajemen
         ' Label22
         ' 
         Label22.AutoSize = True
-        Label22.Location = New Point(178, 91)
+        Label22.Location = New Point(156, 68)
         Label22.Name = "Label22"
-        Label22.Size = New Size(118, 20)
+        Label22.Size = New Size(95, 15)
         Label22.TabIndex = 3
         Label22.Text = "Radius Transmisi"
         ' 
         ' Label21
         ' 
         Label21.AutoSize = True
-        Label21.Location = New Point(168, 29)
+        Label21.Location = New Point(147, 22)
         Label21.Name = "Label21"
-        Label21.Size = New Size(93, 20)
+        Label21.Size = New Size(74, 15)
         Label21.TabIndex = 2
         Label21.Text = "Output Daya"
         ' 
         ' nudRadius
         ' 
-        nudRadius.Location = New Point(7, 80)
-        nudRadius.Margin = New Padding(3, 4, 3, 4)
+        nudRadius.Location = New Point(6, 60)
         nudRadius.Name = "nudRadius"
-        nudRadius.Size = New Size(137, 27)
+        nudRadius.Size = New Size(120, 23)
         nudRadius.TabIndex = 1
         ' 
         ' nudOutputDaya
         ' 
-        nudOutputDaya.Location = New Point(8, 16)
-        nudOutputDaya.Margin = New Padding(3, 4, 3, 4)
+        nudOutputDaya.Location = New Point(7, 12)
         nudOutputDaya.Name = "nudOutputDaya"
-        nudOutputDaya.Size = New Size(137, 27)
+        nudOutputDaya.Size = New Size(120, 23)
         nudOutputDaya.TabIndex = 0
         ' 
         ' tpMisc
@@ -815,11 +770,10 @@ Partial Class PabrikManajemen
         tpMisc.Controls.Add(cbAda)
         tpMisc.Controls.Add(nudKonsumsiPemeliharaan)
         tpMisc.Controls.Add(txtFungsiUtama)
-        tpMisc.Location = New Point(4, 29)
-        tpMisc.Margin = New Padding(3, 4, 3, 4)
+        tpMisc.Location = New Point(4, 24)
         tpMisc.Name = "tpMisc"
-        tpMisc.Padding = New Padding(3, 4, 3, 4)
-        tpMisc.Size = New Size(294, 223)
+        tpMisc.Padding = New Padding(3, 3, 3, 3)
+        tpMisc.Size = New Size(256, 164)
         tpMisc.TabIndex = 6
         tpMisc.Text = "Miscellaneous"
         tpMisc.UseVisualStyleBackColor = True
@@ -827,37 +781,36 @@ Partial Class PabrikManajemen
         ' Label25
         ' 
         Label25.AutoSize = True
-        Label25.Location = New Point(-5, 140)
+        Label25.Location = New Point(-4, 105)
         Label25.Name = "Label25"
-        Label25.Size = New Size(127, 20)
+        Label25.Size = New Size(100, 15)
         Label25.TabIndex = 6
         Label25.Text = "Baterai Cadangan"
         ' 
         ' Label24
         ' 
         Label24.AutoSize = True
-        Label24.Location = New Point(199, 105)
+        Label24.Location = New Point(174, 79)
         Label24.Name = "Label24"
-        Label24.Size = New Size(117, 20)
+        Label24.Size = New Size(93, 15)
         Label24.TabIndex = 5
         Label24.Text = "Biaya Perawatan"
         ' 
         ' Label23
         ' 
         Label23.AutoSize = True
-        Label23.Location = New Point(184, 33)
+        Label23.Location = New Point(161, 25)
         Label23.Name = "Label23"
-        Label23.Size = New Size(51, 20)
+        Label23.Size = New Size(42, 15)
         Label23.TabIndex = 4
         Label23.Text = "Fungsi"
         ' 
         ' cbTidak
         ' 
         cbTidak.AutoSize = True
-        cbTidak.Location = New Point(173, 164)
-        cbTidak.Margin = New Padding(3, 4, 3, 4)
+        cbTidak.Location = New Point(151, 123)
         cbTidak.Name = "cbTidak"
-        cbTidak.Size = New Size(67, 24)
+        cbTidak.Size = New Size(55, 19)
         cbTidak.TabIndex = 3
         cbTidak.Text = "Tidak"
         cbTidak.UseVisualStyleBackColor = True
@@ -865,28 +818,25 @@ Partial Class PabrikManajemen
         ' cbAda
         ' 
         cbAda.AutoSize = True
-        cbAda.Location = New Point(99, 164)
-        cbAda.Margin = New Padding(3, 4, 3, 4)
+        cbAda.Location = New Point(87, 123)
         cbAda.Name = "cbAda"
-        cbAda.Size = New Size(58, 24)
+        cbAda.Size = New Size(47, 19)
         cbAda.TabIndex = 2
         cbAda.Text = "Ada"
         cbAda.UseVisualStyleBackColor = True
         ' 
         ' nudKonsumsiPemeliharaan
         ' 
-        nudKonsumsiPemeliharaan.Location = New Point(67, 103)
-        nudKonsumsiPemeliharaan.Margin = New Padding(3, 4, 3, 4)
+        nudKonsumsiPemeliharaan.Location = New Point(59, 77)
         nudKonsumsiPemeliharaan.Name = "nudKonsumsiPemeliharaan"
-        nudKonsumsiPemeliharaan.Size = New Size(105, 27)
+        nudKonsumsiPemeliharaan.Size = New Size(92, 23)
         nudKonsumsiPemeliharaan.TabIndex = 1
         ' 
         ' txtFungsiUtama
         ' 
-        txtFungsiUtama.Location = New Point(58, 33)
-        txtFungsiUtama.Margin = New Padding(3, 4, 3, 4)
+        txtFungsiUtama.Location = New Point(51, 25)
         txtFungsiUtama.Name = "txtFungsiUtama"
-        txtFungsiUtama.Size = New Size(114, 27)
+        txtFungsiUtama.Size = New Size(100, 23)
         txtFungsiUtama.TabIndex = 0
         ' 
         ' tpCombat
@@ -899,11 +849,10 @@ Partial Class PabrikManajemen
         tpCombat.Controls.Add(cbTipeKerusakan)
         tpCombat.Controls.Add(cbTipeSenjata)
         tpCombat.Controls.Add(nudDayaSerang)
-        tpCombat.Location = New Point(4, 29)
-        tpCombat.Margin = New Padding(3, 4, 3, 4)
+        tpCombat.Location = New Point(4, 24)
         tpCombat.Name = "tpCombat"
-        tpCombat.Padding = New Padding(3, 4, 3, 4)
-        tpCombat.Size = New Size(294, 223)
+        tpCombat.Padding = New Padding(3, 3, 3, 3)
+        tpCombat.Size = New Size(256, 164)
         tpCombat.TabIndex = 7
         tpCombat.Text = "Combat"
         tpCombat.UseVisualStyleBackColor = True
@@ -911,71 +860,67 @@ Partial Class PabrikManajemen
         ' Label29
         ' 
         Label29.AutoSize = True
-        Label29.Location = New Point(197, 173)
+        Label29.Location = New Point(172, 130)
         Label29.Name = "Label29"
-        Label29.Size = New Size(81, 20)
+        Label29.Size = New Size(63, 15)
         Label29.TabIndex = 7
         Label29.Text = "Durabilitas"
         ' 
         ' Label28
         ' 
         Label28.AutoSize = True
-        Label28.Location = New Point(192, 136)
+        Label28.Location = New Point(168, 102)
         Label28.Name = "Label28"
-        Label28.Size = New Size(99, 20)
+        Label28.Size = New Size(77, 15)
         Label28.TabIndex = 6
         Label28.Text = "Tipe Damage"
         ' 
         ' Label27
         ' 
         Label27.AutoSize = True
-        Label27.Location = New Point(197, 87)
+        Label27.Location = New Point(172, 65)
         Label27.Name = "Label27"
-        Label27.Size = New Size(93, 20)
+        Label27.Size = New Size(72, 15)
         Label27.TabIndex = 5
         Label27.Text = "Daya Serang"
         ' 
         ' Label26
         ' 
         Label26.AutoSize = True
-        Label26.Location = New Point(197, 21)
+        Label26.Location = New Point(172, 16)
         Label26.Name = "Label26"
-        Label26.Size = New Size(91, 20)
+        Label26.Size = New Size(71, 15)
         Label26.TabIndex = 4
         Label26.Text = "Tipe Senjata"
         ' 
         ' nudDurabilitas
         ' 
-        nudDurabilitas.Location = New Point(55, 171)
-        nudDurabilitas.Margin = New Padding(3, 4, 3, 4)
+        nudDurabilitas.Location = New Point(48, 128)
         nudDurabilitas.Name = "nudDurabilitas"
-        nudDurabilitas.Size = New Size(125, 27)
+        nudDurabilitas.Size = New Size(109, 23)
         nudDurabilitas.TabIndex = 3
         ' 
         ' cbTipeKerusakan
         ' 
         cbTipeKerusakan.FormattingEnabled = True
-        cbTipeKerusakan.Location = New Point(55, 132)
-        cbTipeKerusakan.Margin = New Padding(3, 4, 3, 4)
+        cbTipeKerusakan.Location = New Point(48, 99)
         cbTipeKerusakan.Name = "cbTipeKerusakan"
-        cbTipeKerusakan.Size = New Size(124, 28)
+        cbTipeKerusakan.Size = New Size(109, 23)
         cbTipeKerusakan.TabIndex = 2
         ' 
         ' cbTipeSenjata
         ' 
         cbTipeSenjata.FormattingEnabled = True
-        cbTipeSenjata.Location = New Point(55, 23)
-        cbTipeSenjata.Margin = New Padding(3, 4, 3, 4)
+        cbTipeSenjata.Location = New Point(48, 17)
         cbTipeSenjata.Name = "cbTipeSenjata"
-        cbTipeSenjata.Size = New Size(124, 28)
+        cbTipeSenjata.Size = New Size(109, 23)
         cbTipeSenjata.TabIndex = 1
         ' 
         ' nudDayaSerang
         ' 
-        nudDayaSerang.Location = New Point(57, 77)
-        nudDayaSerang.Margin = New Padding(3, 4, 3, 4)
+        nudDayaSerang.Location = New Point(50, 58)
         nudDayaSerang.Name = "nudDayaSerang"
-        nudDayaSerang.Size = New Size(122, 27)
+        nudDayaSerang.Size = New Size(107, 23)
         nudDayaSerang.TabIndex = 0
         ' 
         ' ErrorProvider1
@@ -984,13 +929,12 @@ Partial Class PabrikManajemen
         ' 
         ' PabrikManajemen
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(Panel2)
         Controls.Add(Panel1)
-        Margin = New Padding(3, 4, 3, 4)
         Name = "PabrikManajemen"
-        Size = New Size(1067, 821)
+        Size = New Size(934, 616)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(dgvData, ComponentModel.ISupportInitialize).EndInit()

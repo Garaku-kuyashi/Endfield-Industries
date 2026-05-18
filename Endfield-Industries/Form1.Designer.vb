@@ -28,6 +28,7 @@ Partial Class Form1
         ' 
         ' btnMasuk
         ' 
+        btnMasuk.Anchor = AnchorStyles.None
         btnMasuk.BackColor = Color.Yellow
         btnMasuk.FlatAppearance.BorderColor = Color.Gray
         btnMasuk.FlatStyle = FlatStyle.Flat
@@ -41,6 +42,7 @@ Partial Class Form1
         ' 
         ' btnKeluar
         ' 
+        btnKeluar.Anchor = AnchorStyles.None
         btnKeluar.BackColor = Color.Yellow
         btnKeluar.FlatAppearance.BorderColor = Color.Gray
         btnKeluar.FlatStyle = FlatStyle.Flat

@@ -13,7 +13,7 @@ Public Class uc_Home
             Dim sqlCount As String = "SELECT COUNT(*) FROM tbl_alat"
             cmd = New MySqlCommand(sqlCount, conn)
             Dim totalAlat As Integer = Convert.ToInt32(cmd.ExecuteScalar())
-            lblTotalAlat.Text = "TOTAL ASET" & vbCrLf &
+            lblTotalAlat.Text = "TOTAL ASET" & Environment.NewLine &
                                 totalAlat & " Unit"
 
 
@@ -27,14 +27,19 @@ Public Class uc_Home
             cmd = New MySqlCommand(sqlWilayah, conn)
             dr = cmd.ExecuteReader()
 
-            lblPersenWilayah.Text = "SEBARAN WILAYAH:" & vbCrLf
+            lblPersenWilayah.Text = "SEBARAN WILAYAH:" & Environment.NewLine
             Dim adaWilayah As Boolean = False
             While dr.Read()
                 adaWilayah = True
                 Dim namaWilayah As String = dr("wilayah").ToString()
                 Dim jmlAlat As Integer = Convert.ToInt32(dr("jumlah_alat"))
-                Dim nilaiPersen As Double = Math.Round(Val(dr("persen")), 1)
-                lblPersenWilayah.Text &= $"- {namaWilayah}: {jmlAlat} Unit ({nilaiPersen}%)" & vbCrLf
+                Dim persenVal As Double = 0
+                Dim idxPersen As Integer = dr.GetOrdinal("persen")
+                If Not dr.IsDBNull(idxPersen) Then
+                    persenVal = Convert.ToDouble(dr("persen"))
+                End If
+                Dim nilaiPersen As Double = Math.Round(persenVal, 1)
+                lblPersenWilayah.Text &= $"- {namaWilayah}: {jmlAlat} Unit ({nilaiPersen}%)" & Environment.NewLine
             End While
 
             If Not adaWilayah Then
@@ -50,13 +55,14 @@ Public Class uc_Home
 
             cmd = New MySqlCommand(sqlEnergi, conn)
             dr = cmd.ExecuteReader()
-            lblTotalEnergi.Text = "KONSUMSI DAYA:" & vbCrLf
+            lblTotalEnergi.Text = "KONSUMSI DAYA:" & Environment.NewLine
             Dim adaEnergi As Boolean = False
             While dr.Read()
                 adaEnergi = True
                 Dim namaWilayah As String = dr("wilayah").ToString()
-                Dim dayaWilayah As Integer = If(IsDBNull(dr("total_daya")), 0, Convert.ToInt32(dr("total_daya")))
-                lblTotalEnergi.Text &= $"- {namaWilayah}: {dayaWilayah} MW" & vbCrLf
+                Dim idxDaya As Integer = dr.GetOrdinal("total_daya")
+                Dim dayaWilayah As Integer = If(dr.IsDBNull(idxDaya), 0, Convert.ToInt32(dr("total_daya")))
+                lblTotalEnergi.Text &= $"- {namaWilayah}: {dayaWilayah} MW" & Environment.NewLine
             End While
 
             If Not adaEnergi Then
@@ -66,9 +72,9 @@ Public Class uc_Home
             dr.Close()
 
         Catch ex As Exception
-            lblTotalAlat.Text = "TOTAL ASET" & vbCrLf & "0 Unit"
-            lblPersenWilayah.Text = "SEBARAN WILAYAH:" & vbCrLf & "Gagal memuat data"
-            lblTotalEnergi.Text = "KONSUMSI DAYA:" & vbCrLf & "Gagal memuat data"
+            lblTotalAlat.Text = "TOTAL ASET" & Environment.NewLine & "0 Unit"
+            lblPersenWilayah.Text = "SEBARAN WILAYAH:" & Environment.NewLine & "Gagal memuat data"
+            lblTotalEnergi.Text = "KONSUMSI DAYA:" & Environment.NewLine & "Gagal memuat data"
             Console.WriteLine("Dashboard Error Log: " & ex.Message)
         Finally
             conn.Close()

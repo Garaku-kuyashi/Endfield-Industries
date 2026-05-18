@@ -37,11 +37,12 @@ Partial Class Home
         ' 
         msNavigation.BackColor = Color.Transparent
         msNavigation.Dock = DockStyle.Left
+        msNavigation.GripMargin = New Padding(2)
         msNavigation.Items.AddRange(New ToolStripItem() {menuHome, menuManajemen, menuCetakKartu, menuCetakLaporan, menuKembali, menuKeluar})
         msNavigation.Location = New Point(0, 0)
         msNavigation.Name = "msNavigation"
         msNavigation.Padding = New Padding(6, 120, 0, 2)
-        msNavigation.Size = New Size(101, 502)
+        msNavigation.Size = New Size(101, 423)
         msNavigation.TabIndex = 0
         msNavigation.Text = "MenuStrip1"
         ' 
@@ -75,7 +76,7 @@ Partial Class Home
         ' 
         ' menuKembali
         ' 
-        menuKembali.Margin = New Padding(0, 10, 0, 10)
+        menuKembali.Margin = New Padding(0, 10, 0, 80)
         menuKembali.Name = "menuKembali"
         menuKembali.Size = New Size(88, 19)
         menuKembali.Text = "Kembali"
@@ -90,9 +91,9 @@ Partial Class Home
         ' pnlMainContent
         ' 
         pnlMainContent.BackColor = Color.Transparent
-        pnlMainContent.Location = New Point(101, -1)
+        pnlMainContent.Location = New Point(101, 0)
         pnlMainContent.Name = "pnlMainContent"
-        pnlMainContent.Size = New Size(844, 503)
+        pnlMainContent.Size = New Size(844, 502)
         pnlMainContent.TabIndex = 1
         ' 
         ' Home
@@ -101,7 +102,7 @@ Partial Class Home
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.Menustrip_page
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(945, 502)
+        ClientSize = New Size(800, 423)
         Controls.Add(pnlMainContent)
         Controls.Add(msNavigation)
         DoubleBuffered = True
