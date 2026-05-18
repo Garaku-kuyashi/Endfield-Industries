@@ -37,7 +37,7 @@ Partial Class uc_Home
         ' 
         pnlTotalAlat.BackColor = SystemColors.ActiveBorder
         pnlTotalAlat.Controls.Add(lblTotalAlat)
-        pnlTotalAlat.Location = New Point(130, 296)
+        pnlTotalAlat.Location = New Point(32, 168)
         pnlTotalAlat.Name = "pnlTotalAlat"
         pnlTotalAlat.Size = New Size(200, 100)
         pnlTotalAlat.TabIndex = 0
@@ -55,7 +55,7 @@ Partial Class uc_Home
         ' 
         pnlPersenWilayah.BackColor = SystemColors.ActiveBorder
         pnlPersenWilayah.Controls.Add(lblPersenWilayah)
-        pnlPersenWilayah.Location = New Point(349, 296)
+        pnlPersenWilayah.Location = New Point(251, 168)
         pnlPersenWilayah.Name = "pnlPersenWilayah"
         pnlPersenWilayah.Size = New Size(200, 100)
         pnlPersenWilayah.TabIndex = 1
@@ -73,7 +73,7 @@ Partial Class uc_Home
         ' 
         pnlTotalEnergi.BackColor = SystemColors.ActiveBorder
         pnlTotalEnergi.Controls.Add(lblTotalEnergi)
-        pnlTotalEnergi.Location = New Point(574, 296)
+        pnlTotalEnergi.Location = New Point(476, 168)
         pnlTotalEnergi.Name = "pnlTotalEnergi"
         pnlTotalEnergi.Size = New Size(200, 100)
         pnlTotalEnergi.TabIndex = 1
@@ -95,7 +95,7 @@ Partial Class uc_Home
         Controls.Add(pnlPersenWilayah)
         Controls.Add(pnlTotalAlat)
         Name = "uc_Home"
-        Size = New Size(961, 541)
+        Size = New Size(816, 462)
         pnlTotalAlat.ResumeLayout(False)
         pnlTotalAlat.PerformLayout()
         pnlPersenWilayah.ResumeLayout(False)

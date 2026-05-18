@@ -91,16 +91,16 @@ Partial Class Home
         ' pnlMainContent
         ' 
         pnlMainContent.BackColor = Color.Transparent
-        pnlMainContent.Location = New Point(101, 0)
+        pnlMainContent.Location = New Point(100, 0)
         pnlMainContent.Name = "pnlMainContent"
-        pnlMainContent.Size = New Size(844, 502)
+        pnlMainContent.Size = New Size(701, 423)
         pnlMainContent.TabIndex = 1
         ' 
         ' Home
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Menustrip_page
+        BackgroundImage = My.Resources.Resources.Menustrip_page2
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(800, 423)
         Controls.Add(pnlMainContent)
