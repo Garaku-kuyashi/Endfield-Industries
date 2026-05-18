@@ -57,4 +57,7 @@
         pnlMainContent.Controls.Add(uc)
     End Sub
 
+    Private Sub menuCetakKartu_Click(sender As Object, e As EventArgs) Handles menuCetakKartu.Click
+        Call TampilkanHalaman(New uc_kartu())
+    End Sub
 End Class

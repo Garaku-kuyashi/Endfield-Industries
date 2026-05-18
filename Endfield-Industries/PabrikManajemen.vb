@@ -2,6 +2,9 @@
 Imports System.Data
 
 Public Class PabrikManajemen
+    ' Variabel Global tambahan untuk menyimpan path foto secara dinamis
+    Private lokasiFoto As String = "-"
+
     Private ReadOnly recipeEndfield As New Dictionary(Of String, String) From {
         {"Originium Ore", "Originium Ingot"},
         {"Iron Ore", "Iron Plate"},
@@ -15,6 +18,26 @@ Public Class PabrikManajemen
         txtKodeAlat.ReadOnly = True
     End Sub
 
+    ' --- FITUR: TOMBOL INPUT FOTO ---
+    Private Sub btnInput_Click(sender As Object, e As EventArgs) Handles btnInput.Click
+        Using ofd As New OpenFileDialog()
+            ' Batasi ekstensi file yang diizinkan untuk diunggah
+            ofd.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.bmp)|*.png;*.jpg;*.jpeg;*.bmp"
+            ofd.Title = "Pilih Foto Alat / Mesin Gudang"
+
+            If ofd.ShowDialog() = DialogResult.OK Then
+                lokasiFoto = ofd.FileName ' Simpan path file fisik ke variabel global
+
+                ' Buang alokasi memori gambar lama di PictureBox jika ada
+                If pcAlat.Image IsNot Nothing Then pcAlat.Image.Dispose()
+
+                ' Muat gambar baru ke pcAlat secara aman
+                pcAlat.Image = Image.FromFile(lokasiFoto)
+                pcAlat.SizeMode = PictureBoxSizeMode.Zoom
+            End If
+        End Using
+    End Sub
+
     Private Sub cbKategori_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbKategori.SelectedIndexChanged
         ErrorProvider1.SetError(cbKategori, "")
         If cbKategori.SelectedIndex = -1 Then Exit Sub
@@ -25,12 +48,13 @@ Public Class PabrikManajemen
         Dim hurufAcak As String = Chr(r.Next(97, 122))
         txtKodeAlat.Text = inisial & "-" & angkaAcak & hurufAcak
         tcSpek.TabPages.Clear()
+
         Select Case cbKategori.Text
             Case "Resourcing" : tcSpek.TabPages.Add(tpResourcing)
             Case "Logistic" : tcSpek.TabPages.Add(tpLogistic)
             Case "Depot" : tcSpek.TabPages.Add(tpDepot)
-            Case "Production I" : tcSpek.TabPages.Add(tpProd1)
-            Case "Production II" : tcSpek.TabPages.Add(tpProd2)
+            Case "Productions I", "Production I" : tcSpek.TabPages.Add(tpProd1)
+            Case "Productions II", "Production II" : tcSpek.TabPages.Add(tpProd2)
             Case "Power" : tcSpek.TabPages.Add(tpPower)
             Case "Miscellaneous" : tcSpek.TabPages.Add(tpMisc)
             Case "Combat" : tcSpek.TabPages.Add(tpCombat)
@@ -46,6 +70,7 @@ Public Class PabrikManajemen
         End If
     End Sub
 
+    ' --- OPERASI CRUD: SIMPAN DATA ---
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         ClearAllErrors(ErrorProvider1)
         If Not ValidateMainForm(txtNama, cbKategori, cbWilayah, txtDayaTerpakai, ErrorProvider1) Then Exit Sub
@@ -59,7 +84,7 @@ Public Class PabrikManajemen
             End If
 
             Dim sqlInduk As String = "INSERT INTO tbl_alat (kode_alat, nama_alat, kategori, wilayah, daya_terpakai, foto_path, deskripsi) " &
-                                 "VALUES (@kode, @nama, @kat, @wil, @daya, @foto, @desk)"
+                                     "VALUES (@kode, @nama, @kat, @wil, @daya, @foto, @desk)"
 
             Dim cmdInduk = New MySqlCommand(sqlInduk, ConnectionModule.conn)
             cmdInduk.Parameters.AddWithValue("@kode", txtKodeAlat.Text)
@@ -67,7 +92,7 @@ Public Class PabrikManajemen
             cmdInduk.Parameters.AddWithValue("@kat", cbKategori.Text)
             cmdInduk.Parameters.AddWithValue("@wil", cbWilayah.Text)
             cmdInduk.Parameters.AddWithValue("@daya", Convert.ToDouble(txtDayaTerpakai.Text))
-            cmdInduk.Parameters.AddWithValue("@foto", "-")
+            cmdInduk.Parameters.AddWithValue("@foto", lokasiFoto) ' Menggunakan variabel global lokasiFoto
             cmdInduk.Parameters.AddWithValue("@desk", rtxtDesk.Text)
 
             cmdInduk.ExecuteNonQuery()
@@ -98,12 +123,12 @@ Public Class PabrikManajemen
                     v1 = nudKapasitasMaks.Value
                     b1 = If(cb1.Checked, 1, 0)
 
-                Case "Productions I"
+                Case "Productions I", "Production I"
                     t1 = txtInputMath.Text
                     t2 = txtOutputMath.Text
                     v1 = nudWaktuProses.Value
 
-                Case "Productions II"
+                Case "Productions II", "Production II"
                     v1 = nudjumlahKomp.Value
                     t1 = cbModulTambahan.Text
                     v2 = nudLevel.Value
@@ -134,7 +159,7 @@ Public Class PabrikManajemen
 
             cmdSpek.ExecuteNonQuery()
 
-            MsgBox("Data berhasil disimpan!", MsgBoxStyle.Information, "Sukses")
+            MsgBox("Data berhasil disimpan ke sistem GudangKu!", MsgBoxStyle.Information, "Sukses")
 
             Call TampilData()
             Call ClearForm()
@@ -144,9 +169,9 @@ Public Class PabrikManajemen
         Finally
             ConnectionModule.conn.Close()
         End Try
-
     End Sub
 
+    ' --- OPERASI CRUD: UBAH DATA ---
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
         ClearAllErrors(ErrorProvider1)
         If dgvData.CurrentRow Is Nothing Then
@@ -159,12 +184,14 @@ Public Class PabrikManajemen
         Try
             Call ConnectionModule.Koneksi()
 
-            Dim sqlInduk As String = "UPDATE tbl_alat SET nama_alat=@nama, wilayah=@wil, daya_terpakai=@daya, deskripsi=@desk WHERE id_alat=@id"
+            ' Update menyertakan perubahan kolom foto_path
+            Dim sqlInduk As String = "UPDATE tbl_alat SET nama_alat=@nama, wilayah=@wil, daya_terpakai=@daya, foto_path=@foto, deskripsi=@desk WHERE id_alat=@id"
             Dim cmdInduk = New MySqlCommand(sqlInduk, ConnectionModule.conn)
             cmdInduk.Parameters.AddWithValue("@id", idAlat)
             cmdInduk.Parameters.AddWithValue("@nama", txtNama.Text)
             cmdInduk.Parameters.AddWithValue("@wil", cbWilayah.Text)
             cmdInduk.Parameters.AddWithValue("@daya", Val(txtDayaTerpakai.Text))
+            cmdInduk.Parameters.AddWithValue("@foto", lokasiFoto) ' Menyimpan data lokasiFoto terupdate
             cmdInduk.Parameters.AddWithValue("@desk", rtxtDesk.Text)
             cmdInduk.ExecuteNonQuery()
 
@@ -183,9 +210,9 @@ Public Class PabrikManajemen
                     t1 = cbTipeJalur.Text : v1 = nudAngkut.Value : v2 = nudKecepatan.Value : t2 = txtFilter.Text
                 Case "Depot"
                     v1 = nudKapasitasMaks.Value : b1 = If(cb1.Checked, 1, 0)
-                Case "Productions I"
+                Case "Productions I", "Production I"
                     t1 = txtInputMath.Text : t2 = txtOutputMath.Text : v1 = nudWaktuProses.Value
-                Case "Productions II"
+                Case "Productions II", "Production II"
                     v1 = nudjumlahKomp.Value : t1 = cbModulTambahan.Text : v2 = nudLevel.Value
                 Case "Power"
                     v1 = nudOutputDaya.Value : v2 = nudRadius.Value
@@ -210,6 +237,8 @@ Public Class PabrikManajemen
             ConnectionModule.conn.Close()
         End Try
     End Sub
+
+    ' --- OPERASI CRUD: HAPUS DATA ---
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
         If dgvData.CurrentRow Is Nothing Then
             MsgBox("Pilih baris pada data grid yang ingin dihapus!", MsgBoxStyle.Exclamation, "Perhatian")
@@ -238,6 +267,7 @@ Public Class PabrikManajemen
         End If
     End Sub
 
+    ' --- DATA MAPPING: CELL CLICK GRID KE KONTROL FORM ---
     Private Sub dgvData_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvData.CellClick
         If e.RowIndex < 0 Then Exit Sub
 
@@ -250,13 +280,34 @@ Public Class PabrikManajemen
             rtxtDesk.Text = row.Cells("deskripsi").Value.ToString()
             txtKodeAlat.Text = row.Cells("kode_alat").Value.ToString()
 
+            ' Sinkronisasi pembacaan foto_path dari DB ke Variabel & PictureBox
+            If IsDBNull(row.Cells("foto_path").Value) OrElse row.Cells("foto_path").Value.ToString() = "-" Then
+                lokasiFoto = "-"
+                If pcAlat.Image IsNot Nothing Then pcAlat.Image.Dispose()
+                pcAlat.Image = Nothing
+            Else
+                lokasiFoto = row.Cells("foto_path").Value.ToString()
+                Try
+                    ' Pastikan file fisik foto masih ada di sistem lokal laptop/PC sebelum dimuat
+                    If System.IO.File.Exists(lokasiFoto) Then
+                        If pcAlat.Image IsNot Nothing Then pcAlat.Image.Dispose()
+                        pcAlat.Image = Image.FromFile(lokasiFoto)
+                        pcAlat.SizeMode = PictureBoxSizeMode.Zoom
+                    Else
+                        If pcAlat.Image IsNot Nothing Then pcAlat.Image.Dispose()
+                        pcAlat.Image = Nothing
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine("File fisik gambar rusak/tidak ditemukan: " & ex.Message)
+                End Try
+            End If
+
             Dim kat As String = row.Cells("kategori").Value.ToString()
             Dim v1 As Decimal = If(IsDBNull(row.Cells("val_1").Value), 0, Convert.ToDecimal(row.Cells("val_1").Value))
             Dim v2 As Decimal = If(IsDBNull(row.Cells("val_2").Value), 0, Convert.ToDecimal(row.Cells("val_2").Value))
             Dim t1 As String = If(IsDBNull(row.Cells("txt_1").Value), "", row.Cells("txt_1").Value.ToString())
             Dim t2 As String = If(IsDBNull(row.Cells("txt_2").Value), "", row.Cells("txt_2").Value.ToString())
             Dim b1 As Boolean = If(IsDBNull(row.Cells("bool_1").Value), False, Convert.ToBoolean(row.Cells("bool_1").Value))
-
 
             Select Case kat
                 Case "Resourcing"
@@ -265,9 +316,9 @@ Public Class PabrikManajemen
                     cbTipeJalur.Text = t1 : nudAngkut.Value = v1 : nudKecepatan.Value = v2 : txtFilter.Text = t2
                 Case "Depot"
                     nudKapasitasMaks.Value = v1 : cb1.Checked = b1 : cb2.Checked = Not b1
-                Case "Productions I"
+                Case "Productions I", "Production I"
                     txtInputMath.Text = t1 : txtOutputMath.Text = t2 : nudWaktuProses.Value = v1
-                Case "Productions II"
+                Case "Productions II", "Production II"
                     nudjumlahKomp.Value = v1 : cbModulTambahan.Text = t1 : nudLevel.Value = v2
                 Case "Power"
                     nudOutputDaya.Value = v1 : nudRadius.Value = v2
@@ -282,13 +333,15 @@ Public Class PabrikManajemen
         End Try
     End Sub
 
-
+    ' --- DATA RETRIEVAL: MEMUAT DATABASE KE GRID ---
     Sub TampilData(Optional keyword As String = "")
         Try
-            Dim query As String = "SELECT a.id_alat, a.kode_alat, a.nama_alat, a.kategori, a.wilayah, a.daya_terpakai, a.deskripsi, " &
-                                 "s.val_1, s.val_2, s.val_3, s.val_4, s.txt_1, s.txt_2, s.bool_1 " &
-                                 "FROM tbl_alat a " &
-                                 "LEFT JOIN tbl_spesifikasi s ON a.id_alat = s.id_alat "
+            ' Menambahkan penarikan kolom a.foto_path agar datanya tersedia di dgvData
+            Dim query As String = "SELECT a.id_alat, a.kode_alat, a.nama_alat, a.kategori, a.wilayah, a.daya_terpakai, a.foto_path, a.deskripsi, " &
+                                  "s.val_1, s.val_2, s.val_3, s.val_4, s.txt_1, s.txt_2, s.bool_1 " &
+                                  "FROM tbl_alat a " &
+                                  "LEFT JOIN tbl_spesifikasi s ON a.id_alat = s.id_alat "
+
             If keyword.Trim() <> "" Then
                 query &= "WHERE a.nama_alat LIKE @key OR a.kode_alat LIKE @key OR a.kategori LIKE @key OR a.wilayah LIKE @key "
             End If
@@ -296,6 +349,7 @@ Public Class PabrikManajemen
             query &= "ORDER BY a.id_alat DESC"
             Call ConnectionModule.Koneksi()
             Dim cmd = New MySqlCommand(query, ConnectionModule.conn)
+
             If keyword.Trim() <> "" Then
                 cmd.Parameters.AddWithValue("@key", "%" & keyword & "%")
             End If
@@ -307,6 +361,8 @@ Public Class PabrikManajemen
             dgvData.DataSource = dt
             dgvData.Columns("id_alat").Visible = False
             dgvData.Columns("deskripsi").Visible = False
+            dgvData.Columns("foto_path").Visible = False ' Sembunyikan kolom string path agar Grid tetap rapi
+
             dgvData.Columns("kode_alat").HeaderText = "Kode"
             dgvData.Columns("nama_alat").HeaderText = "Nama Mesin"
             dgvData.Columns("kategori").HeaderText = "Kategori"
@@ -331,14 +387,17 @@ Public Class PabrikManajemen
         Call TampilData(txtCari.Text)
     End Sub
 
+    ' --- CLEANING FORM: RESET KONTROL FORM ---
     Sub ClearForm()
-
         txtNama.Clear()
         txtKodeAlat.Clear()
         cbKategori.SelectedIndex = -1
         cbWilayah.SelectedIndex = -1
         txtDayaTerpakai.Clear()
         rtxtDesk.Clear()
+
+        ' Reset Variabel dan Kontrol Foto
+        lokasiFoto = "-"
         If pcAlat.Image IsNot Nothing Then pcAlat.Image.Dispose()
         pcAlat.Image = Nothing
 
@@ -346,13 +405,10 @@ Public Class PabrikManajemen
         nudLaju.Value = nudLaju.Minimum
         txtPersen.Clear()
 
-
-
         cbTipeJalur.SelectedIndex = -1
         nudAngkut.Value = nudAngkut.Minimum
         nudKecepatan.Value = nudKecepatan.Minimum
         txtFilter.Clear()
-
 
         nudKapasitasMaks.Value = nudKapasitasMaks.Minimum
         cb1.Checked = False : cb2.Checked = False

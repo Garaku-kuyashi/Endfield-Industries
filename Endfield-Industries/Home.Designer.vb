@@ -42,7 +42,7 @@ Partial Class Home
         msNavigation.Location = New Point(0, 0)
         msNavigation.Name = "msNavigation"
         msNavigation.Padding = New Padding(6, 120, 0, 2)
-        msNavigation.Size = New Size(101, 423)
+        msNavigation.Size = New Size(126, 423)
         msNavigation.TabIndex = 0
         msNavigation.Text = "MenuStrip1"
         ' 
@@ -50,42 +50,42 @@ Partial Class Home
         ' 
         menuHome.Margin = New Padding(0, 10, 0, 10)
         menuHome.Name = "menuHome"
-        menuHome.Size = New Size(88, 19)
+        menuHome.Size = New Size(113, 19)
         menuHome.Text = "Home"
         ' 
         ' menuManajemen
         ' 
         menuManajemen.Margin = New Padding(0, 10, 0, 10)
         menuManajemen.Name = "menuManajemen"
-        menuManajemen.Size = New Size(88, 19)
+        menuManajemen.Size = New Size(113, 19)
         menuManajemen.Text = "Manajemen"
         ' 
         ' menuCetakKartu
         ' 
         menuCetakKartu.Margin = New Padding(0, 10, 0, 10)
         menuCetakKartu.Name = "menuCetakKartu"
-        menuCetakKartu.Size = New Size(88, 19)
+        menuCetakKartu.Size = New Size(113, 19)
         menuCetakKartu.Text = "Cetak Kartu"
         ' 
         ' menuCetakLaporan
         ' 
         menuCetakLaporan.Margin = New Padding(0, 10, 0, 10)
         menuCetakLaporan.Name = "menuCetakLaporan"
-        menuCetakLaporan.Size = New Size(88, 19)
+        menuCetakLaporan.Size = New Size(113, 19)
         menuCetakLaporan.Text = "Cetak Laporan"
         ' 
         ' menuKembali
         ' 
         menuKembali.Margin = New Padding(0, 10, 0, 80)
         menuKembali.Name = "menuKembali"
-        menuKembali.Size = New Size(88, 19)
+        menuKembali.Size = New Size(113, 19)
         menuKembali.Text = "Kembali"
         ' 
         ' menuKeluar
         ' 
         menuKeluar.Margin = New Padding(0, 10, 0, 10)
         menuKeluar.Name = "menuKeluar"
-        menuKeluar.Size = New Size(88, 19)
+        menuKeluar.Size = New Size(113, 19)
         menuKeluar.Text = "Keluar"
         ' 
         ' pnlMainContent
