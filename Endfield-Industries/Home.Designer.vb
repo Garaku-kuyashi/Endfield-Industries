@@ -91,9 +91,9 @@ Partial Class Home
         ' pnlMainContent
         ' 
         pnlMainContent.BackColor = Color.Transparent
-        pnlMainContent.Location = New Point(100, 0)
+        pnlMainContent.Location = New Point(127, 12)
         pnlMainContent.Name = "pnlMainContent"
-        pnlMainContent.Size = New Size(701, 423)
+        pnlMainContent.Size = New Size(934, 616)
         pnlMainContent.TabIndex = 1
         ' 
         ' Home

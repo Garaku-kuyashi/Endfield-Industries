@@ -219,9 +219,9 @@ Partial Class PabrikManajemen
         Panel2.Controls.Add(txtNama)
         Panel2.Controls.Add(Panel3)
         Panel2.Controls.Add(FlowLayoutPanel1)
-        Panel2.Location = New Point(324, 3)
+        Panel2.Location = New Point(333, 3)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(607, 613)
+        Panel2.Size = New Size(598, 613)
         Panel2.TabIndex = 1
         ' 
         ' Label5
@@ -388,7 +388,7 @@ Partial Class PabrikManajemen
         tpResourcing.Controls.Add(txtPersen)
         tpResourcing.Location = New Point(4, 24)
         tpResourcing.Name = "tpResourcing"
-        tpResourcing.Padding = New Padding(3, 3, 3, 3)
+        tpResourcing.Padding = New Padding(3)
         tpResourcing.Size = New Size(256, 164)
         tpResourcing.TabIndex = 0
         tpResourcing.Text = "Resourcing"
@@ -455,7 +455,7 @@ Partial Class PabrikManajemen
         tpLogistic.Controls.Add(cbTipeJalur)
         tpLogistic.Location = New Point(4, 24)
         tpLogistic.Name = "tpLogistic"
-        tpLogistic.Padding = New Padding(3, 3, 3, 3)
+        tpLogistic.Padding = New Padding(3)
         tpLogistic.Size = New Size(256, 164)
         tpLogistic.TabIndex = 1
         tpLogistic.Text = "Logistics"
@@ -535,7 +535,7 @@ Partial Class PabrikManajemen
         tpDepot.Controls.Add(cb1)
         tpDepot.Location = New Point(4, 24)
         tpDepot.Name = "tpDepot"
-        tpDepot.Padding = New Padding(3, 3, 3, 3)
+        tpDepot.Padding = New Padding(3)
         tpDepot.Size = New Size(256, 164)
         tpDepot.TabIndex = 2
         tpDepot.Text = "Depot"
@@ -596,7 +596,7 @@ Partial Class PabrikManajemen
         tpProd1.Controls.Add(txtInputMath)
         tpProd1.Location = New Point(4, 24)
         tpProd1.Name = "tpProd1"
-        tpProd1.Padding = New Padding(3, 3, 3, 3)
+        tpProd1.Padding = New Padding(3)
         tpProd1.Size = New Size(256, 164)
         tpProd1.TabIndex = 3
         tpProd1.Text = "Production I"
@@ -660,7 +660,7 @@ Partial Class PabrikManajemen
         tpProd2.Controls.Add(nudjumlahKomp)
         tpProd2.Location = New Point(4, 24)
         tpProd2.Name = "tpProd2"
-        tpProd2.Padding = New Padding(3, 3, 3, 3)
+        tpProd2.Padding = New Padding(3)
         tpProd2.Size = New Size(256, 164)
         tpProd2.TabIndex = 4
         tpProd2.Text = "Production II"
@@ -723,7 +723,7 @@ Partial Class PabrikManajemen
         tpPower.Controls.Add(nudOutputDaya)
         tpPower.Location = New Point(4, 24)
         tpPower.Name = "tpPower"
-        tpPower.Padding = New Padding(3, 3, 3, 3)
+        tpPower.Padding = New Padding(3)
         tpPower.Size = New Size(256, 164)
         tpPower.TabIndex = 5
         tpPower.Text = "Power"
@@ -772,7 +772,7 @@ Partial Class PabrikManajemen
         tpMisc.Controls.Add(txtFungsiUtama)
         tpMisc.Location = New Point(4, 24)
         tpMisc.Name = "tpMisc"
-        tpMisc.Padding = New Padding(3, 3, 3, 3)
+        tpMisc.Padding = New Padding(3)
         tpMisc.Size = New Size(256, 164)
         tpMisc.TabIndex = 6
         tpMisc.Text = "Miscellaneous"
@@ -851,7 +851,7 @@ Partial Class PabrikManajemen
         tpCombat.Controls.Add(nudDayaSerang)
         tpCombat.Location = New Point(4, 24)
         tpCombat.Name = "tpCombat"
-        tpCombat.Padding = New Padding(3, 3, 3, 3)
+        tpCombat.Padding = New Padding(3)
         tpCombat.Size = New Size(256, 164)
         tpCombat.TabIndex = 7
         tpCombat.Text = "Combat"
