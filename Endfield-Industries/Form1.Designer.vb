@@ -28,29 +28,40 @@ Partial Class Form1
         ' 
         ' btnMasuk
         ' 
-        btnMasuk.Location = New Point(242, 181)
+        btnMasuk.BackColor = Color.Yellow
+        btnMasuk.FlatAppearance.BorderColor = Color.Gray
+        btnMasuk.FlatStyle = FlatStyle.Flat
+        btnMasuk.Font = New Font("Novecento sans wide Normal", 9F, FontStyle.Bold)
+        btnMasuk.Location = New Point(268, 252)
         btnMasuk.Name = "btnMasuk"
         btnMasuk.Size = New Size(75, 23)
         btnMasuk.TabIndex = 5
-        btnMasuk.Text = "Mausk"
-        btnMasuk.UseVisualStyleBackColor = True
+        btnMasuk.Text = "Masuk"
+        btnMasuk.UseVisualStyleBackColor = False
         ' 
         ' btnKeluar
         ' 
-        btnKeluar.Location = New Point(403, 181)
+        btnKeluar.BackColor = Color.Yellow
+        btnKeluar.FlatAppearance.BorderColor = Color.Gray
+        btnKeluar.FlatStyle = FlatStyle.Flat
+        btnKeluar.Font = New Font("Novecento sans wide Normal", 9F, FontStyle.Bold)
+        btnKeluar.Location = New Point(460, 252)
         btnKeluar.Name = "btnKeluar"
         btnKeluar.Size = New Size(75, 23)
         btnKeluar.TabIndex = 6
         btnKeluar.Text = "Keluar"
-        btnKeluar.UseVisualStyleBackColor = True
+        btnKeluar.UseVisualStyleBackColor = False
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        BackgroundImage = My.Resources.Resources.Home
+        BackgroundImageLayout = ImageLayout.Zoom
+        ClientSize = New Size(800, 423)
         Controls.Add(btnKeluar)
         Controls.Add(btnMasuk)
+        DoubleBuffered = True
         Name = "Form1"
         Text = "Login-Form"
         ResumeLayout(False)
