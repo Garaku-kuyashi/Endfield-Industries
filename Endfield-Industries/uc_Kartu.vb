@@ -50,11 +50,11 @@ Public Class uc_kartu
 
             ' 2. Ambil parameter kategori dan data spesifikasi generik dari DB
             Dim kat As String = row.Cells("kategori").Value.ToString()
-            Dim v1 As String = If(IsDBNull(row.Cells("val_1").Value), "0", row.Cells("val_1").Value.ToString())
-            Dim v2 As String = If(IsDBNull(row.Cells("val_2").Value), "0", row.Cells("val_2").Value.ToString())
-            Dim t1 As String = If(IsDBNull(row.Cells("txt_1").Value), "-", row.Cells("txt_1").Value.ToString())
-            Dim t2 As String = If(IsDBNull(row.Cells("txt_2").Value), "-", row.Cells("txt_2").Value.ToString())
-            Dim b1 As String = If(IsDBNull(row.Cells("bool_1").Value), "0", row.Cells("bool_1").Value.ToString())
+            Dim v1 As String = If(row.Cells("val_1").Value Is Nothing OrElse row.Cells("val_1").Value Is DBNull.Value, "0", row.Cells("val_1").Value.ToString())
+            Dim v2 As String = If(row.Cells("val_2").Value Is Nothing OrElse row.Cells("val_2").Value Is DBNull.Value, "0", row.Cells("val_2").Value.ToString())
+            Dim t1 As String = If(row.Cells("txt_1").Value Is Nothing OrElse row.Cells("txt_1").Value Is DBNull.Value, "-", row.Cells("txt_1").Value.ToString())
+            Dim t2 As String = If(row.Cells("txt_2").Value Is Nothing OrElse row.Cells("txt_2").Value Is DBNull.Value, "-", row.Cells("txt_2").Value.ToString())
+            Dim b1 As String = If(row.Cells("bool_1").Value Is Nothing OrElse row.Cells("bool_1").Value Is DBNull.Value, "0", row.Cells("bool_1").Value.ToString())
 
             ' 3. Set Judul Spesifikasi Berdasarkan Kategori Terpilih
             lblJudulSpek.Text = "KATEGORI: " & kat.ToUpper()
@@ -64,45 +64,45 @@ Public Class uc_kartu
 
             Select Case kat
                 Case "Resourcing" ' 3 Input: Mineral, Laju, Persen
-                    teksSpesifikasi = $"• Tipe Mineral: {t1}" & vbCrLf &
-                                      $"• Laju Ekstraksi: {v1} /s" & vbCrLf &
+                    teksSpesifikasi = $"• Tipe Mineral: {t1}" & Environment.NewLine &
+                                      $"• Laju Ekstraksi: {v1} /s" & Environment.NewLine &
                                       $"• Efisiensi Penambahan: {t2}"
 
                 Case "Logistic" ' 4 Input: Jalur, Angkut, Kecepatan, Filter
-                    teksSpesifikasi = $"• Tipe Jalur: {t1}" & vbCrLf &
-                                      $"• Kapasitas Angkut: {v1} unit" & vbCrLf &
-                                      $"• Kecepatan Transfer: {v2} m/s" & vbCrLf &
+                    teksSpesifikasi = $"• Tipe Jalur: {t1}" & Environment.NewLine &
+                                      $"• Kapasitas Angkut: {v1} unit" & Environment.NewLine &
+                                      $"• Kecepatan Transfer: {v2} m/s" & Environment.NewLine &
                                       $"• Filter Item: {t2}"
 
                 Case "Depot" ' 2 Input: Maks, Auto Export
                     Dim statusExport As String = If(b1 = "1", "Ya (Aktif)", "Tidak (Non-Aktif)")
-                    teksSpesifikasi = $"• Kapasitas Maksimal: {v1} slots" & vbCrLf &
+                    teksSpesifikasi = $"• Kapasitas Maksimal: {v1} slots" & Environment.NewLine &
                                       $"• Auto Export: {statusExport}"
 
                 Case "Productions I" ' 3 Input: Input Math, Output Math, Waktu
-                    teksSpesifikasi = $"• Input Material: {t1}" & vbCrLf &
-                                      $"• Output Material: {t2}" & vbCrLf &
+                    teksSpesifikasi = $"• Input Material: {t1}" & Environment.NewLine &
+                                      $"• Output Material: {t2}" & Environment.NewLine &
                                       $"• Waktu Proses: {v1} detik"
 
                 Case "Productions II" ' 3 Input: Jml Komponen, Modul, Level
-                    teksSpesifikasi = $"• Jumlah Komponen: {v1} unit" & vbCrLf &
-                                      $"• Modul Tambahan: {t1}" & vbCrLf &
+                    teksSpesifikasi = $"• Jumlah Komponen: {v1} unit" & Environment.NewLine &
+                                      $"• Modul Tambahan: {t1}" & Environment.NewLine &
                                       $"• Level Teknologi: T-{v2}"
 
                 Case "Power" ' 2 Input: Output Daya, Radius
-                    teksSpesifikasi = $"• Output Energi: {v1} MW" & vbCrLf &
+                    teksSpesifikasi = $"• Output Energi: {v1} MW" & Environment.NewLine &
                                       $"• Radius Transmisi: {v2} meter"
 
                 Case "Miscellaneous" ' 3 Input: Fungsi, Konsumsi, Baterai
                     Dim statusBaterai As String = If(b1 = "1", "Tersedia", "Tidak Ada")
-                    teksSpesifikasi = $"• Fungsi Utama: {t1}" & vbCrLf &
-                                      $"• Beban Pemeliharaan: {v1} /cycle" & vbCrLf &
+                    teksSpesifikasi = $"• Fungsi Utama: {t1}" & Environment.NewLine &
+                                      $"• Beban Pemeliharaan: {v1} /cycle" & Environment.NewLine &
                                       $"• Baterai Cadangan: {statusBaterai}"
 
                 Case "Combat" ' 4 Input: Senjata, Serang, Kerusakan, Durabilitas
-                    teksSpesifikasi = $"• Tipe Senjata: {t1}" & vbCrLf &
-                                      $"• Daya Serang (ATK): {v1}" & vbCrLf &
-                                      $"• Tipe Kerusakan: {t2}" & vbCrLf &
+                    teksSpesifikasi = $"• Tipe Senjata: {t1}" & Environment.NewLine &
+                                      $"• Daya Serang (ATK): {v1}" & Environment.NewLine &
+                                      $"• Tipe Kerusakan: {t2}" & Environment.NewLine &
                                       $"• Durabilitas Struktur: {v2} pts"
                 Case Else
                     teksSpesifikasi = "Spesifikasi teknis belum dikonfigurasi."
@@ -125,7 +125,7 @@ Public Class uc_kartu
     Private Sub btnDownload_Click(sender As Object, e As EventArgs) Handles btnDownload.Click
         ' Validasi memastikan user sudah memilih data sebelum download
         If lblKodeKartu.Text = "Label7" Or lblKodeKartu.Text = "" Then
-            MsgBox("Silakan pilih data alat pada tabel terlebih dahulu!", MsgBoxStyle.Exclamation, "Unduhan Dibatalkan")
+            MessageBox.Show("Silakan pilih data alat pada tabel terlebih dahulu!", "Unduhan Dibatalkan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -145,7 +145,7 @@ Public Class uc_kartu
                 If simpanDialog.ShowDialog() = DialogResult.OK Then
                     ' 4. Simpan hasil jepretan dari memory internal ke format file fisik PNG
                     propertiGambar.Save(simpanDialog.FileName, ImageFormat.Png)
-                    MsgBox("Kartu Aset Berhasil Diunduh!", MsgBoxStyle.Information, "Download Sukses")
+                    MessageBox.Show("Kartu Aset Berhasil Diunduh!", "Download Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End Using
 
@@ -153,7 +153,7 @@ Public Class uc_kartu
             propertiGambar.Dispose()
 
         Catch ex As Exception
-            MsgBox("Terjadi kegagalan saat merender file PNG: " & ex.Message, MsgBoxStyle.Critical, "Sistem Error")
+            MessageBox.Show("Terjadi kegagalan saat merender file PNG: " & ex.Message, "Sistem Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

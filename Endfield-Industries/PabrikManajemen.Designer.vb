@@ -347,6 +347,7 @@ Partial Class PabrikManajemen
         ' 
         ' pcAlat
         ' 
+        pcAlat.BorderStyle = BorderStyle.FixedSingle
         pcAlat.Location = New Point(22, 36)
         pcAlat.Name = "pcAlat"
         pcAlat.Size = New Size(100, 144)
