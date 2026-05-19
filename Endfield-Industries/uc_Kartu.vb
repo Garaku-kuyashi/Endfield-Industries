@@ -189,4 +189,12 @@ Public Class uc_kartu
             ConnectionModule.conn.Close()
         End Try
     End Sub
+
+    Private Sub pnlKartu_Paint(sender As Object, e As PaintEventArgs) Handles pnlKartu.Paint
+
+    End Sub
+
+    Private Sub pnlDgv_Paint(sender As Object, e As PaintEventArgs) Handles pnlDgv.Paint
+
+    End Sub
 End Class

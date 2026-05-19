@@ -140,7 +140,7 @@ Partial Class PabrikManajemen
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = SystemColors.AppWorkspace
+        Panel1.BackColor = Color.Transparent
         Panel1.Controls.Add(btnClear)
         Panel1.Controls.Add(btnHapus)
         Panel1.Controls.Add(btnUbah)
@@ -149,12 +149,12 @@ Partial Class PabrikManajemen
         Panel1.Controls.Add(txtCari)
         Panel1.Location = New Point(4, 3)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(323, 610)
+        Panel1.Size = New Size(373, 674)
         Panel1.TabIndex = 0
         ' 
         ' btnClear
         ' 
-        btnClear.Location = New Point(148, 496)
+        btnClear.Location = New Point(179, 552)
         btnClear.Name = "btnClear"
         btnClear.Size = New Size(128, 23)
         btnClear.TabIndex = 7
@@ -163,7 +163,7 @@ Partial Class PabrikManajemen
         ' 
         ' btnHapus
         ' 
-        btnHapus.Location = New Point(22, 496)
+        btnHapus.Location = New Point(53, 552)
         btnHapus.Name = "btnHapus"
         btnHapus.Size = New Size(120, 23)
         btnHapus.TabIndex = 6
@@ -172,7 +172,7 @@ Partial Class PabrikManajemen
         ' 
         ' btnUbah
         ' 
-        btnUbah.Location = New Point(148, 467)
+        btnUbah.Location = New Point(179, 523)
         btnUbah.Name = "btnUbah"
         btnUbah.Size = New Size(128, 23)
         btnUbah.TabIndex = 5
@@ -181,7 +181,7 @@ Partial Class PabrikManajemen
         ' 
         ' btnSimpan
         ' 
-        btnSimpan.Location = New Point(22, 467)
+        btnSimpan.Location = New Point(53, 523)
         btnSimpan.Name = "btnSimpan"
         btnSimpan.Size = New Size(120, 23)
         btnSimpan.TabIndex = 4
@@ -191,7 +191,7 @@ Partial Class PabrikManajemen
         ' dgvData
         ' 
         dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvData.Location = New Point(22, 90)
+        dgvData.Location = New Point(53, 146)
         dgvData.Name = "dgvData"
         dgvData.RowHeadersWidth = 51
         dgvData.Size = New Size(254, 371)
@@ -199,7 +199,7 @@ Partial Class PabrikManajemen
         ' 
         ' txtCari
         ' 
-        txtCari.Location = New Point(22, 31)
+        txtCari.Location = New Point(53, 103)
         txtCari.Name = "txtCari"
         txtCari.Size = New Size(254, 23)
         txtCari.TabIndex = 0
@@ -219,15 +219,15 @@ Partial Class PabrikManajemen
         Panel2.Controls.Add(txtNama)
         Panel2.Controls.Add(Panel3)
         Panel2.Controls.Add(FlowLayoutPanel1)
-        Panel2.Location = New Point(333, 3)
+        Panel2.Location = New Point(375, 3)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(598, 613)
+        Panel2.Size = New Size(732, 674)
         Panel2.TabIndex = 1
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(20, 283)
+        Label5.Location = New Point(33, 357)
         Label5.Name = "Label5"
         Label5.Size = New Size(62, 15)
         Label5.TabIndex = 11
@@ -236,7 +236,7 @@ Partial Class PabrikManajemen
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(20, 245)
+        Label4.Location = New Point(33, 319)
         Label4.Name = "Label4"
         Label4.Size = New Size(49, 15)
         Label4.TabIndex = 10
@@ -245,7 +245,7 @@ Partial Class PabrikManajemen
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(20, 182)
+        Label3.Location = New Point(33, 256)
         Label3.Name = "Label3"
         Label3.Size = New Size(58, 15)
         Label3.TabIndex = 9
@@ -254,7 +254,7 @@ Partial Class PabrikManajemen
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(20, 121)
+        Label2.Location = New Point(33, 195)
         Label2.Name = "Label2"
         Label2.Size = New Size(50, 15)
         Label2.TabIndex = 8
@@ -263,7 +263,7 @@ Partial Class PabrikManajemen
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(20, 72)
+        Label1.Location = New Point(33, 146)
         Label1.Name = "Label1"
         Label1.Size = New Size(39, 15)
         Label1.TabIndex = 7
@@ -271,7 +271,7 @@ Partial Class PabrikManajemen
         ' 
         ' txtDayaTerpakai
         ' 
-        txtDayaTerpakai.Location = New Point(106, 275)
+        txtDayaTerpakai.Location = New Point(119, 349)
         txtDayaTerpakai.Name = "txtDayaTerpakai"
         txtDayaTerpakai.Size = New Size(196, 23)
         txtDayaTerpakai.TabIndex = 6
@@ -280,7 +280,7 @@ Partial Class PabrikManajemen
         ' 
         cbWilayah.FormattingEnabled = True
         cbWilayah.Items.AddRange(New Object() {"Valley-IV", "Wuling", "Mix"})
-        cbWilayah.Location = New Point(106, 237)
+        cbWilayah.Location = New Point(119, 311)
         cbWilayah.Name = "cbWilayah"
         cbWilayah.Size = New Size(197, 23)
         cbWilayah.TabIndex = 5
@@ -289,21 +289,21 @@ Partial Class PabrikManajemen
         ' 
         cbKategori.FormattingEnabled = True
         cbKategori.Items.AddRange(New Object() {"Resourcing", "Logistics", "Depot", "Production I", "Production II", "Power", "Miscellaneous", "Combat"})
-        cbKategori.Location = New Point(106, 113)
+        cbKategori.Location = New Point(119, 187)
         cbKategori.Name = "cbKategori"
         cbKategori.Size = New Size(196, 23)
         cbKategori.TabIndex = 4
         ' 
         ' txtKodeAlat
         ' 
-        txtKodeAlat.Location = New Point(106, 173)
+        txtKodeAlat.Location = New Point(119, 247)
         txtKodeAlat.Name = "txtKodeAlat"
         txtKodeAlat.Size = New Size(200, 23)
         txtKodeAlat.TabIndex = 3
         ' 
         ' txtNama
         ' 
-        txtNama.Location = New Point(106, 69)
+        txtNama.Location = New Point(119, 143)
         txtNama.Name = "txtNama"
         txtNama.Size = New Size(197, 23)
         txtNama.TabIndex = 2
@@ -311,9 +311,9 @@ Partial Class PabrikManajemen
         ' Panel3
         ' 
         Panel3.Controls.Add(GroupBox2)
-        Panel3.Location = New Point(69, 354)
+        Panel3.Location = New Point(69, 403)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(502, 224)
+        Panel3.Size = New Size(573, 227)
         Panel3.TabIndex = 1
         ' 
         ' GroupBox2
@@ -357,7 +357,7 @@ Partial Class PabrikManajemen
         ' FlowLayoutPanel1
         ' 
         FlowLayoutPanel1.Controls.Add(tcSpek)
-        FlowLayoutPanel1.Location = New Point(309, 69)
+        FlowLayoutPanel1.Location = New Point(375, 146)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         FlowLayoutPanel1.Size = New Size(267, 195)
         FlowLayoutPanel1.TabIndex = 0
@@ -931,10 +931,13 @@ Partial Class PabrikManajemen
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = My.Resources.Resources.manajemen
+        BackgroundImageLayout = ImageLayout.Zoom
         Controls.Add(Panel2)
         Controls.Add(Panel1)
+        DoubleBuffered = True
         Name = "PabrikManajemen"
-        Size = New Size(934, 616)
+        Size = New Size(1110, 680)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(dgvData, ComponentModel.ISupportInitialize).EndInit()
